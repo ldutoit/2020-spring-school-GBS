@@ -23,10 +23,9 @@ hands\-on analysis using the Stacks software pipeline.
 10:30-11:00 | *Break* | |
 11:00-12:30 | [SNP calling in the absence of a genome part 1](sessions/stacks.md) | 
 12:30-13:30 | *Lunch Break* | |
-13:30-15:00 | [SNP calling in the absence of a genome part 2](sessions/stacks.md) | \
+13:30-15:00 | [SNP calling in the absence of a genome part 2](sessions/stacks.md) | 
 15:00-15:30 | *Break* | |
 15:30-17:00 | [Filtering your SNPs](sessions/filteringSNPs.md) | 
-17:00 | End of the workshop | |
-
+17:00 | End of the workshop | 
 
 
