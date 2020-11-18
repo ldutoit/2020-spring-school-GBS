@@ -96,7 +96,7 @@ study as well as the ```population``` program. The set of instructions below sho
 
 You should now be able to choose your optimised parameters according to the Paris et al. (2017) method! ("select those values which maximize the number of polymorphic loci found in 80% of the individuals in your study")
 
-## Part 2: Getting to population genetics analyses
+## Part 1b: Getting to population genetics analyses
 
 1. In this second exercise we will now be working on the full set of threespine stickleback
 data sampled from throughout Oregon, on the west coast of the United States. These
