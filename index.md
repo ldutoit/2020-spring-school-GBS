@@ -18,7 +18,7 @@ hands\-on analysis using the Stacks software pipeline.
 
 ## Schedule
 
-Time |  lesson
+Time |  Lesson
 ---|---
 09:30-10:30 | Keynote Speaker: [Dr. Alana alexander](https://gemmell-lab.otago.ac.nz/our-team/19-team/research-and-postdoctoral-research-fellows/138-dr-alana-alexander)
 10:30-11:00 | [Data101: From raw data to individual samples files](sessions/stacks.md)  
