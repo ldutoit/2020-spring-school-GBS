@@ -239,5 +239,5 @@ Nature Methods 9, 808–810.
 
 ***
 
-[Jump to Exercise I](stacks_exerciseI_dataprep)  
+[Jump to Exercise I](stacks_exerciseI_dataprep.md)  
 [Jump back to main workshop schedule](https://otagomohio.github.io/2019-06-11_GBS_EE/)
