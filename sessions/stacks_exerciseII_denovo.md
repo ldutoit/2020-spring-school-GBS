@@ -147,6 +147,13 @@ the assembled data for this exercise.
     • What is the mean value of nucleotide diversity (π) and FIS for each of the three
         populations? [HINT: The less -S command may help you view these files easily by avoiding the wrapping]
 
+
+
+## Part 2: Running Stacks with a reference genome.
+
+Same data, but aligned...
+
+
 ## Part 3: Populations genetics analyses from Stacks
 
 Our goal now is to export a subset of loci for analysis in Structure, which analyzes the
