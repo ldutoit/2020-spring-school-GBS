@@ -20,13 +20,15 @@ hands\-on analysis using the Stacks software pipeline.
 
 Time |  lesson
 ---|---
-09:00-10:30 | [From raw reads to individual samples](sessions/stacks.md)  
-10:30-11:00 | *Break* 
-11:00-12:30 | [SNP calling in the absence of a genome part 1](sessions/stacks.md) 
-12:30-13:30 | *Lunch Break* | 
-13:30-15:00 | [SNP calling in the absence of a genome part 2](sessions/stacks.md) 
-15:00-15:30 | *Break* 
-15:30-17:00 | [Filtering your SNPs](sessions/filteringSNPs.md) 
-17:00 | End of the workshop 
+09:30-10:30 | Keynote Speaker: [Dr. Alana alexander](https://gemmell-lab.otago.ac.nz/our-team/19-team/research-and-postdoctoral-research-fellows/138-dr-alana-alexander)
+10:30-11:00 | [Data101: From raw data to individual samples files](sessions/stacks.md)  
+11:00-11:15 | *Break* 
+11:15-12:30 | [SNP calling in the absence of a genome part 1](sessions/stacks.md) 
+12:15-13:00 | *Lunch Break* | 
+13:00-14:30 | [SNP calling in the absence of a genome part 2](sessions/stacks.md) 
+13:00-14:30 | [SNP calling with a reference genome](sessions/stacks.md) 
+14:30-14:45 | *Break* 
+14:45-16:30 | [Filtering your SNPs](sessions/filteringSNPs.md) 
+16:30 | End of the day 
 
 
