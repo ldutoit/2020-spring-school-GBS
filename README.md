@@ -1,3 +1,3 @@
 # Genotyping\-by\-Sequencing Workshop
 
-Materials for workshop on 11-12 June
+Materials for a full-day workshop during the bioinformatic spring school of november 2020 in dunedin, New Zealand.
