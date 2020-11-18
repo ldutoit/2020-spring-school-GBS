@@ -5,16 +5,18 @@
 **Adapted by:** Ludovic Dutoit
 
 
-## Datasets
+## Goal
+
+The goal of this first exercise is to take you from raw reads data to individual sample files.
+
 
 • Dataset 1 (DS1) - This data set comprises just a small proportion of a lane of single-end
 standard RAD data.
 
 • Dataset 2 (DS2) - A fragment of a lane of paired-end RAD sequences that have been
 double-digested with two restriction enzymes.
-       You will use these first two data sets to become familiar with the structure of RAD
-        sequences, as well as to become proficient with the pre-processing (i.e. cleaning
-        and de-multiplexing) of data before alignment or assembly. DS1 consists of two samples of single-end RAD data from the         same set of samples, but constructed in two different libraries and sequenced independently.
+
+You will use these first two data sets to become familiar with the structure of RAD sequences, as well as to become proficient with the pre-processing (i.e. cleaning and de-multiplexing) of data before alignment or assembly. DS1 consists of two samples of single-end RAD data from the  same set of samples, but constructed in two different libraries and sequenced independently.
 
 ## Part 1: Single-end reads
 
@@ -24,19 +26,19 @@ samples that were individually barcoded. This **‘de-multiplexing’** serves t
 reads with the different individuals or population samples from which they were
 derived.
 
-Before doing anything, open a text file in your favorite plain text editor e.g. Notepad on Windows/TextWrangler on Mac/Sublime on all platforms (avoid editors like MS Word that have fancy formatting, because they can format your text in a way that the command line can't understand). You will write your commands in your plain text editor and then paste them into the terminal. By saving these commands, you'll remember how and why you did things later today, but also in the future.
+
 
 1. Let's organise our space, get comfortable moving around and copy our data :
     
-    • Log in to NeSI/Mahuika, and from there, log in to our reserved machine by:
+    • Log into Jupyter at XXXXX:
        
-       ssh -Y ga-vl01
+
     
-    • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different          steps of your analysis. We will start by making the directory ```working``` in your working space, so let's `cd` (change directory) to your working location:
+    • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different        steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
 
-       cd /nesi/nobackup/nesi02659/users/<yourusername>
+       cd /nesi/nobackup/XXX/users/<yourusername>
 
-    • Once there, create the directory: ```/nesi/nobackup/nesi02659/users/<yourusername>/working``` (by using `mkdir working`) and then `cd` into `working`
+    • Once there, create the directory: ```/nesi/nobackup/nesi02659/users/<yourusername>/GBS``` (by using `mkdir GBS`) and then `cd` into `working`
         so we can create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within
         your hierarchy. You’ll be making many directories, so stay organized!
     
