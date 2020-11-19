@@ -85,9 +85,9 @@ Should you have wished to run this yourself:
 ```
 module load FastQC
 fastqc *gz
-`` 
+```
 
-Let's look at this repoty:
+Let's look at this FastQC report:
 
     • What is this weird thing in the base-pair content from base 7 to 12-13?
 
@@ -98,13 +98,20 @@ Let's look at this repoty:
       alignments to a reference genome. However, low quality data can
       affect downstream analysis for *de novo* and reference-based approaches, producing false positives, such as errant SNP predictions.
 
-4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. Take advantage of the Stacks [manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
-process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. Do not run the commands you figure out just yet, but first follow through the points below:
+4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks [anual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
+process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. 
     
-  • Get back into your ```dataprep``` folder
+  • Get back into your ```dataprep``` folder by running:
+  
+  cd dataprep
     
   • It is time to load the ```stacks``` module to be able to access the ```process_radtags``` command. Find it, load it.
-          
+  
+  ```
+  module spider Stacks
+  module load Stacks
+  ```
+  
    • You will need to specify the set of barcodes used in the construction of the RAD library.
         Remember, each P1 adaptor in RAD has a particular DNA sequence (an inline
         barcode) that gets sequenced first, allowing data to be associated with samples such as
@@ -130,6 +137,10 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
     
    • Based on the barcode file, how many samples were multiplexed together in this
         RAD library? (*Hint:* count the lines.)
+        
+        ```
+        wc -l lane1_barcodes.txt
+       ```
        
    • You will need to specify the restriction enzyme used to construct the library (SbfI), the
         directory of input files (the ```lane1``` directory), the list of barcodes, the output directory
@@ -243,7 +254,7 @@ squeue -u <yourusername>
     -   How many reads were retained?
     
 
-*Congratulations, you reached the end of Exercise 1. Have a breathe, help your fellow attendees, grab a coffee and we will be back shortly*
+*Congratulations, you reached the end of Exercise 1. Have a breathe, help your fellow attendees, grab a coffee and we will be back shortly to call variants de-novo*
 
 [Jump to exercise II](stacks_exerciseII_denovo)  
 [Jump back to Stacks intro](stacks.md)  
