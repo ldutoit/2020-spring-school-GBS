@@ -23,36 +23,29 @@ derived.
        
     
     • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
+    
+       cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<yourusername>/
        
-       
-       `cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<yourusername>/`
-       
-       OR from the launch of the Jupyter terminal:
+OR from the launch of the Jupyter terminal:
      
-       `cd users/<yourusername>/`
+       cd users/<yourusername>/
        
-       *NOTE* If you get lost an any time today, you can always cd in your home following this upper link.
+*NOTE* If you get lost an any time today, you can always cd in your home following this upper link.
        
-    • Once there, create the directory `GBS` and then change directory into `GBS`:
-      
-        `
+   • Once there, create the directory `GBS` and then change directory into `GBS`:
+     
         mkdir GBS
         cd GBS
-        `
         
-     • The exercise from now on is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not tho, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
+        
+   • The exercise from now on is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not tho, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
       
-     •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized!
+   •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! Each step of your analysis goes into the hierarchy of the workspace, and each step of  the analysis takes its input from one directory and places it into another directory. We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
     
-    • Each step of your analysis goes into the hierarchy of the workspace, and each step of  
-        the analysis takes its input from one directory and places it into another director. We will name the                   directories in a way that correspond to each stage and that allow us to remember where they are. A well
-        organized workspace makes analyses easier and prevents data from being overwritten.
+  • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. **Inside** that directory we will create two additional directories: ```lane1``` and ```samples```. 
     
-    • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. Inside that directory we will create two additional directories: ```lane1``` and ```samples```. 
+  • As a check that we've set up our workspace correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
     
-    • As a check that we've set up our workspace correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
-    
-    ```
     GBS/:
     dataprep
 
@@ -63,19 +56,18 @@ derived.
 
     GBS/dataprep/samples:
     
-    ```
     
-    • Copy the data set 1 (DS1) to your ```lane1``` directory. The data set is in the file
+   • Copy the data set 1 containing the raw reads  to your ```lane1``` directory. The data set is in the file
        `/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1.tar` 
        (*hint*: `cp /path/to/what/you/want/to/copy /destination/you/want/it/to/go`)          
     
-    • `cd` to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).    
+   • `cd`  to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).    
     *hint* : you might try searching for "How to extract a tar archive"
 
 2. Have a look at what is there now. These gz-compressed fastq files have millions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
 (the ```less``` command may be of use).
     
-3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. We'll save you the trouble of running it here ... In reality, sequencing platform often provide you with the quality reports too. This link [](...) is the fastqc report for file ... . Download it and have a quick look at it.
+3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data.  In reality, sequencing platform often provide you with the quality reports too. This link [](...) is the fastqc report for file ... . Download it and have a quick look at it.
 
 Should you want to run this yourself:
 
@@ -86,9 +78,9 @@ fastqc *gz
 
 Let's look at this FastQC report together:
 
-    • What is this weird thing in the base-pair content from base 7 to 12-13?
+   • What is this weird thing in the base-pair content from base 7 to 12-13?
 
-    • You probably noticed that not all of the data is high quality. In general, you will want
+   • You probably noticed that not all of the data is high quality. In general, you will want
       to remove the lowest quality sequences from your data set before you proceed.
       However, the stringency of the filtering will depend on the final application. In
       general, higher stringency is needed for *de novo* assemblies as compared to
@@ -114,7 +106,7 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
         barcode) that gets sequenced first, allowing data to be associated with samples such as
         individuals or populations.
     
-   • To save you some time, the barcode file is  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1_barcodes.x``` Copy it in `dataprep` Should you need a quick check, 
+   • To save you some time, the barcode file i at  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1_barcodes.x``` Copy it in `dataprep` 
    
 
    •  Normally, these sample names would
@@ -131,17 +123,17 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
         
    • You should now be able to run the ```process_radtags``` command from the ```dataprep``` directory. It will take a couple of minutes to run. 
    
-      -   If you find that something is possibly missing from your process_radtags
+   -   If you find that something is possibly missing from your process_radtags
                 input, correct the error and give running process_radtags another try.
 
    • The process_radtags program will write a log file into the output directory. Have a look in there.
         Examine the log and answer the following questions:
     
-    -   How many reads were retained?
+  -   How many reads were retained?
     
-    -   Of those discarded, what were the reasons? 
+  -   Of those discarded, what were the reasons? 
     
-    -   In the process_radtags log file, what can the list of “sequences not recorded” tell
+  -   In the process_radtags log file, what can the list of “sequences not recorded” tell
                 you about the barcodes analyzed and about the sequencing quality in general?
 
 
