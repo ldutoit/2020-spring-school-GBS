@@ -67,14 +67,19 @@ OR from the launch of the Jupyter terminal:
 2. Have a look at what is there now. These gz-compressed fastq files have millions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
 (the ```less``` command may be of use).
     
-3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data.  In reality, sequencing platform often provide you with the quality reports too. This link [](...) is the fastqc report for file ... . Download it and have a quick look at it.
-
-Should you want to run this yourself:
+3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on  these files. load the module first and then run FastQC over all the gzipped file:
 
 ```
 module load FastQC
 fastqc *gz
 ```
+
+   •  You just generated a few FastQC reports. Use the Jupyyrt hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`).
+   
+   <p align="center"><br><img src="iimg/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p></p>
+
+   
+   
 
 Let's look at this FastQC report together:
 
@@ -87,12 +92,12 @@ Let's look at this FastQC report together:
       alignments to a reference genome. However, low quality data can
       affect downstream analysis for *de novo* and reference-based approaches, producing false positives, such as errant SNP predictions.
 
-4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks [anual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
+4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
 process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. 
     
   • Get back into your ```dataprep``` folder by running:
   
-  cd ```dataprep```
+  ```cd ../dataprep```
     
   • It is time to load the ```stacks``` module to be able to access the ```process_radtags``` command. Find it load it.
   
@@ -106,7 +111,7 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
         barcode) that gets sequenced first, allowing data to be associated with samples such as
         individuals or populations.
     
-   • To save you some time, the barcode file i at  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1_barcodes.x``` Copy it in `dataprep` 
+   • To save you some time, the barcode file is at:  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1_barcodes.txt``` Copy it in `dataprep` where you currently are.
    
 
    •  Normally, these sample names would
