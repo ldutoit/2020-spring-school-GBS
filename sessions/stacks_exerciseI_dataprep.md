@@ -25,20 +25,22 @@ derived.
     • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
        
        
-       ```cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<yourusername>/```
+       `cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<yourusername>/`
        
-       OR from the launch of Jupyter:
+       OR from the launch of the Jupyter terminal:
      
-       ```cd users/<yourusername>/```
+       `cd users/<yourusername>/`
+       
        *NOTE* If you get lost an any time today, you can always cd in your home following this upper link.
        
     • Once there, create the directory `GBS` and then change directory into `GBS`:
       
-        ``` 
+        `
         mkdir GBS
         cd GBS
-        ```
-     • The exercise is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not tho, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
+        `
+        
+     • The exercise from now on is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not tho, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
       
      •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized!
     
