@@ -9,14 +9,10 @@
 
 The goal of this first exercise is to take you from raw reads data to individual sample files.
 
-
-• Dataset 1 (DS1) - This data set comprises just a small proportion of a lane of single-end
+• This first data set comprises just a small proportion of a lane of single-end
 standard RAD data.
 
-• Dataset 2 (DS2) - A fragment of a lane of paired-end RAD sequences that have been
-double-digested with two restriction enzymes.
-
-You will use these first two data sets to become familiar with the structure of RAD sequences, as well as to become proficient with the pre-processing (i.e. cleaning and de-multiplexing) of data before alignment or assembly. DS1 consists of two samples of single-end RAD data from the  same set of samples, but constructed in two different libraries and sequenced independently.
+• You will use this first dataset to become familiar with the structure of RAD sequences, as well as to become proficient with the pre-processing (i.e. cleaning and de-multiplexing) of data before alignment or assembly. 
 
 ## Part 1: Single-end reads
 
@@ -28,7 +24,7 @@ derived.
 
 1. Let's organise our space, get comfortable moving around and copy our data :
     
-    • Log into Jupyter at [https://jupyter.nesi.org.nz/hub/login](https://jupyter.nesi.org.nz/hub/login) . Not sure how to do it? Just follow the instructions [jupyter_hub.md](jupyter_hub.md)
+    • Log into Jupyter at [https://jupyter.nesi.org.nz/hub/login](https://jupyter.nesi.org.nz/hub/login). Not sure how to do it? Just follow the instructions [jupyter_hub.md](jupyter_hub.md)
        
     
     • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
@@ -39,6 +35,7 @@ derived.
        OR from the launch of Jupyter:
      
        ```cd users/<yourusername>/```
+       *NOTE* If you get lost an any time today, you can always cd in your home following this upper link.
        
     • Once there, create the directory `GBS` and then change directory into `GBS`:
       
@@ -46,16 +43,15 @@ derived.
         mkdir GBS
         cd GBS
         ```
-    
-    
-     •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within
-        your hierarchy. You’ll be making many directories, so stay organized!
+     • The exercise is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not tho, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
+      
+     •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized!
     
     • Each step of your analysis goes into the hierarchy of the workspace, and each step of  
         the analysis takes its input from one directory and places it into another director. We will name the                   directories in a way that correspond to each stage and that allow us to remember where they are. A well
         organized workspace makes analyses easier and prevents data from being overwritten.
     
-    • First let's make a few directories. In ```GBS```,  we will create a directory called ```dataprep``` to contain all the data  for this exercise. Inside that directory we will create two additional directories: ```lane1``` and ```samples```. 
+    • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. Inside that directory we will create two additional directories: ```lane1``` and ```samples```. 
     
     • As a check that we've set up our workspace correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
     
@@ -121,31 +117,22 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
         barcode) that gets sequenced first, allowing data to be associated with samples such as
         individuals or populations.
     
-   • To save you some time, the barcode file is in .. Copy it here. 
+   • To save you some time, the barcode file is  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1_barcodes.x``` Copy it in `dataprep` Should you need a quick check, 
    
-   •  Make sure you enter them in the 
-        Assign a sample name for each barcode. Normally, these sample names would
-        correspond to the individuals used in a particular experiment (e.g. individual ID etc), but for this exercise, we
-        will name the samples are named in a simple way, say indv_01, indv_02, etc. e.g.
+
+   •  Normally, these sample names would
+        correspond to the individuals used in a particular experiment (e.g. individual ID etc), but for this exercise, 
+         samples are named in a simple way. Have a look at the inside of this file using the `less` command.
         
-        AAACGG       indv_01
-        AACGTT       indv_02
     
-    [right format](http://catchenlab.life.illinois.edu/stacks/manual/#specbc) (e.g. one per line).
-   • Append the remaining barcodes for this lane of samples from `/nesi/nobackup/nesi02659/source_data/clean/lane1_barcodes.txt` (*Hint:* `cat` and `>>`)
-    
-   • Based on the barcode file, how many samples were multiplexed together in this
-        RAD library? (*Hint:* count the lines.)
+   • Based on the barcode file, can you check how many samples were multiplexed together in this
+        RAD library? (*Hint:* you can count the lines in the file using `wc -l lane1_barcodes.txt`)
         
-        ```
-        wc -l lane1_barcodes.txt
-       ```
-       
-   • You will need to specify the restriction enzyme used to construct the library (SbfI), the
-        directory of input files (the ```lane1``` directory), the list of barcodes, the output directory
-        (```samples```), and specify that process_radtags ```clean, discard, and rescue reads.```
-    
-   • You should now be able to run the command from the ```dataprep``` directory. It will take a couple of minutes to run. 
+      
+   • Have a look at the [help online](https://catchenlab.life.illinois.edu/stacks/comp/process_radtags.php) to prepare          your `process_radtags` command.  You will need to specify the restriction enzyme used to construct the library          (SbfI), the directory of input files (the ```lane1``` directory), the list of barcodes, the output directory
+        (```samples```), and specify that process_radtags ```clean, discard, and rescue reads.``` as options of                 `process_radtags`. 
+        
+   • You should now be able to run the ```process_radtags``` command from the ```dataprep``` directory. It will take a couple of minutes to run. 
    
       -   If you find that something is possibly missing from your process_radtags
                 input, correct the error and give running process_radtags another try.
@@ -160,3 +147,5 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
     -   In the process_radtags log file, what can the list of “sequences not recorded” tell
                 you about the barcodes analyzed and about the sequencing quality in general?
 
+
+Well done! Have a breath, sit back or help your neighbour, we will be back shortly!
