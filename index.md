@@ -14,14 +14,14 @@ genomic or phylogenomic analyses at a fraction of the cost associated with whole
 sequencing.
 
 This one day workshop is designed to show how to process GBS/RAD data through
-hands\-on analysis using the Stacks software pipeline.
+hands\-on analysis using the Stacks software pipeline. 
 
 ## Schedule
 
 Time |  Lesson
 ---|---
 09:30-10:30 | Keynote Speaker: [Dr. Alana alexander](https://gemmell-lab.otago.ac.nz/our-team/19-team/research-and-postdoctoral-research-fellows/138-dr-alana-alexander)
-10:30-11:00 | [Data101: From raw data to individual samples files](sessions/stacks.md)  
+10:30-11:00 | [Data101: From raw data to individual samples files](sessions/stacks_exerciseI_dataprep.md)  
 11:00-11:15 | *Break* 
 11:15-12:30 | [SNP calling in the absence of a genome part 1](sessions/stacks.md) 
 12:15-13:00 | *Lunch Break* | 

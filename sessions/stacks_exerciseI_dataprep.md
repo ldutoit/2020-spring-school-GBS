@@ -9,15 +9,6 @@
 
 The goal of this first exercise is to take you from raw reads data to individual sample files.
 
-
-• Dataset 1 (DS1) - This data set comprises just a small proportion of a lane of single-end
-standard RAD data.
-
-• Dataset 2 (DS2) - A fragment of a lane of paired-end RAD sequences that have been
-double-digested with two restriction enzymes.
-
-You will use these first two data sets to become familiar with the structure of RAD sequences, as well as to become proficient with the pre-processing (i.e. cleaning and de-multiplexing) of data before alignment or assembly. DS1 consists of two samples of single-end RAD data from the  same set of samples, but constructed in two different libraries and sequenced independently.
-
 ## Part 1: Single-end reads
 
 The first step in the analysis of all short-read sequencing data, including RAD-seq
@@ -26,37 +17,35 @@ samples that were individually barcoded. This **‘de-multiplexing’** serves t
 reads with the different individuals or population samples from which they were
 derived.
 
-
-
 1. Let's organise our space, get comfortable moving around and copy our data :
     
-    • Log into Jupyter at XXXXX:
+    • Log into Jupyter at [https://jupyter.nesi.org.nz/hub/login](https://jupyter.nesi.org.nz/hub/login). Not sure how to do it? Just follow the instructions [jupyter_hub.md](jupyter_hub.md)
        
-
     
-    • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different        steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
+    • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
+    
+       cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<yourusername>/
        
-       ```cd /nesi/nobackup/XXX/users/<yourusername>```
+OR from the launch of the Jupyter terminal:
+     
+       cd users/<yourusername>/
        
-    • Once there, create the directory:and then change directory into `GBS`:
-        ``` 
+*NOTE* If you get lost an any time today, you can always cd in your home following this upper link.
+       
+   • Once there, create the directory `GBS` and then change directory into `GBS`:
+     
         mkdir GBS
         cd GBS
-        ```
+        
+        
+   • The exercise from now on is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not tho, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
+      
+   •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! Each step of your analysis goes into the hierarchy of the workspace, and each step of  the analysis takes its input from one directory and places it into another directory. We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
     
+  • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. **Inside** that directory we will create two additional directories: ```lane1``` and ```samples```. 
     
-        We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within
-        your hierarchy. You’ll be making many directories, so stay organized!
+  • As a check that we've set up our workspace correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
     
-    •Each step of your analysis goes into the hierarchy of the workspace, and each step of  
-        the analysis takes its input from one directory and places it into another director. We will name the                   directories in a way that correspond to each stage and that allow us to remember where they are. A well
-        organized workspace makes analyses easier and prevents data from being overwritten.
-    
-    • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data        for this exercise. Inside that directory create two additional directories: ```lane1``` and ```samples```. 
-    
-    • As a check that we've set up our workspace correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
-    
-    ```
     GBS/:
     dataprep
 
@@ -67,31 +56,31 @@ derived.
 
     GBS/dataprep/samples:
     
-    ```
     
-    • Copy the data set 1 (DS1) to your ```lane1``` directory. The data set is in the file
-       `/nesi/nobackup/nesi02659/source_data/clean/lane1.tar` 
+   • Copy the data set 1 containing the raw reads  to your ```lane1``` directory. The data set is in the file
+       `/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1.tar` 
        (*hint*: `cp /path/to/what/you/want/to/copy /destination/you/want/it/to/go`)          
     
-    • `cd` to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).     
+   • `cd`  to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).    
+    *hint* : you might try searching for "How to extract a tar archive"
 
 2. Have a look at what is there now. These gz-compressed fastq files have millions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
 (the ```less``` command may be of use).
     
-3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. We'll save you the trouble of loading it ... This link [](...) is the fastqc report for file ...
+3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data.  In reality, sequencing platform often provide you with the quality reports too. This link [](...) is the fastqc report for file ... . Download it and have a quick look at it.
 
-Should you have wished to run this yourself:
+Should you want to run this yourself:
 
 ```
 module load FastQC
 fastqc *gz
 ```
 
-Let's look at this FastQC report:
+Let's look at this FastQC report together:
 
-    • What is this weird thing in the base-pair content from base 7 to 12-13?
+   • What is this weird thing in the base-pair content from base 7 to 12-13?
 
-      You probably noticed that not all of the data is high quality. In general, you will want
+   • You probably noticed that not all of the data is high quality. In general, you will want
       to remove the lowest quality sequences from your data set before you proceed.
       However, the stringency of the filtering will depend on the final application. In
       general, higher stringency is needed for *de novo* assemblies as compared to
@@ -103,9 +92,9 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
     
   • Get back into your ```dataprep``` folder by running:
   
-  cd dataprep
+  cd ```dataprep```
     
-  • It is time to load the ```stacks``` module to be able to access the ```process_radtags``` command. Find it, load it.
+  • It is time to load the ```stacks``` module to be able to access the ```process_radtags``` command. Find it load it.
   
   ```
   module spider Stacks
@@ -117,145 +106,35 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
         barcode) that gets sequenced first, allowing data to be associated with samples such as
         individuals or populations.
     
-   • Enter the following barcodes into a file called lane1_barcodes.txt in your dataprep
-        directory (*Hint:* `nano`). 
-        
-        AAACGG AACGTT AACTGA AAGACG
-        AAGCTA AATGAG ACAAGA ACAGCG
-        ACATAC ACCATG ACCCCC ACTCTT
-        ACTGGC AGCCAT AGCGCA
-        
-   Make sure you enter them in the [right format](http://catchenlab.life.illinois.edu/stacks/manual/#specbc) (e.g. one per line).
-        Assign a sample name for each barcode. Normally, these sample names would
-        correspond to the individuals used in a particular experiment (e.g. individual ID etc), but for this exercise, we
-        will name the samples in a simple way, say indv_01, indv_02, etc. e.g.
-        
-        AAACGG       indv_01
-        AACGTT       indv_02
-    
-   • Append the remaining barcodes for this lane of samples from `/nesi/nobackup/nesi02659/source_data/clean/lane1_barcodes.txt` (*Hint:* `cat` and `>>`)
-    
-   • Based on the barcode file, how many samples were multiplexed together in this
-        RAD library? (*Hint:* count the lines.)
-        
-        ```
-        wc -l lane1_barcodes.txt
-       ```
-       
-   • You will need to specify the restriction enzyme used to construct the library (SbfI), the
-        directory of input files (the ```lane1``` directory), the list of barcodes, the output directory
-        (```samples```), and specify that process_radtags ```clean, discard, and rescue reads.```
-    
-   • You should now be able to run the command from the ```dataprep``` directory. It will take a couple of minutes to run. 
+   • To save you some time, the barcode file i at  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1_barcodes.x``` Copy it in `dataprep` 
    
-      -   If you find that something is possibly missing from your process_radtags
+
+   •  Normally, these sample names would
+        correspond to the individuals used in a particular experiment (e.g. individual ID etc), but for this exercise, 
+         samples are named in a simple way. Have a look at the inside of this file using the `less` command.
+        
+    
+   • Based on the barcode file, can you check how many samples were multiplexed together in this
+        RAD library? (*Hint:* you can count the lines in the file using `wc -l lane1_barcodes.txt`)
+        
+      
+   • Have a look at the [help online](https://catchenlab.life.illinois.edu/stacks/comp/process_radtags.php) to prepare          your `process_radtags` command.  You will need to specify the restriction enzyme used to construct the library          (SbfI), the directory of input files (the ```lane1``` directory), the list of barcodes, the output directory
+        (```samples```), and specify that process_radtags ```clean, discard, and rescue reads.``` as options of                 `process_radtags`. 
+        
+   • You should now be able to run the ```process_radtags``` command from the ```dataprep``` directory. It will take a couple of minutes to run. 
+   
+   -   If you find that something is possibly missing from your process_radtags
                 input, correct the error and give running process_radtags another try.
 
    • The process_radtags program will write a log file into the output directory. Have a look in there.
         Examine the log and answer the following questions:
     
-    -   How many reads were retained?
+  -   How many reads were retained?
     
-    -   Of those discarded, what were the reasons? 
+  -   Of those discarded, what were the reasons? 
     
-    -   In the process_radtags log file, what can the list of “sequences not recorded” tell
+  -   In the process_radtags log file, what can the list of “sequences not recorded” tell
                 you about the barcodes analyzed and about the sequencing quality in general?
 
-##  Part 2: Paired-end reads
 
-1. We will now work with the second data set. These data contain paired-end reads that
-have been double-digested and dual barcoded. Each set of paired reads contains an
-inline barcode on the first read, and an indexed barcode on both reads. These are
-known as combinatorial barcodes as many unique combinations can be made from
-pairs of barcodes. 
-    
-   • In ```working/dataprep```, create a directory called ```lane2``` to contain the raw data for this
-        exercise and create the directory ```ddsamples``` to contain the cleaned output.
-    
-   •  Copy the dataset 2 (DS2):
-        `/nesi/nobackup/nesi02659/source_data/clean/lane2.tar`
-        into the ```lane2``` directory.
-        
-   •  Extract the lane2.tar file
-    
-2. Examine the contents of the pairs of files in the terminal again.
-   
-   • How are the FASTQ headers related between pairs of files?
-   
-   • Can you identify the indexed barcode in the FASTQ header?
-    
-3. We will again use the Stacks’ program process_radtags to clean and demultiplex
-our samples.
-   
-   • Get back into the ```dataprep``` folder
-   
-   • You will need to specify the set of barcode pairs used in the construction of the RAD
-        library.
-   
-   • Enter the following pairs of barcodes into a file called `lane2_barcodes.txt` in your dataprep
-        directory (make sure you enter them in the [right format](http://catchenlab.life.illinois.edu/stacks/manual/#specbc) ). 
-        
-            AACCA    ATCACG 
-            CATAT    ATCACG 
-            GAGAT    ATCACG
-            TACCG    ATCACG 
-            AAGGA    CGATGT 
-            CAACC    CGATGT
-            GACAC    CGATGT 
-            TACGT    CGATGT
-        
-   As we saw in the previous exercise, the sample names would normally coincide with your particular experimental design. Here, for simplicity, we can just use indv_01, indv_02, etc.
-        
-            AACCA    ATCACG indv_01 
-            CATAT    ATCACG indv_02
-           
-   • Append the remaining barcodes for this lane of samples from the file:
-        ```/nesi/nobackup/nesi02659/source_data/clean/lane2_barcodes.txt```
-        to your barcodes file in your dataprep directory 
-   
-   • How many samples were multiplexed together in this RAD library? (*Hint:* count the lines.) 
-   
-   • Similarly to what we saw above, you will need to specify the two restriction enzymes used to construct the library
-        (```NlaIII``` and ```MluCI```), the directory of input files (the lane2 directory), the list of
-        barcodes, the output directory (ddsamples) and specify that process_radtags
-        clean, discard, and rescue reads. Do not forget to specify the inline index and the fact that you are providing               paired-end reads. Your command should now be ready but don't run it just yet!
-        
-        
-
-4.Running the commands directly on the screen is not common practice. You now are on ```ga-vl01``` which is a reserved amount of resources for this workshop and this iallows us to run pur command directly. On a day to day basis, you would be evolving on the *logi*n node (i.e. The place you reach when you login). All the [resources](https://support.nesi.org.nz/hc/en-gb/articles/360000204076-Mahuika-Slurm-Partitions) are tucked away from the login node. You generally run your commands as jobs that are *sent* to this [resources](https://support.nesi.org.nz/hc/en-gb/articles/360000204076-Mahuika-Slurm-Partitions), not on the login node itself. We will use this process_radtags command as a perfect example to run our first job.
-
-   • copy an example jobfile into this directory. The example is at : '''/nesi/nobackup/nesi02659/source_data/example_job.sh'''
-
-   • Open it with nano, have a look at what is there. As you can see, the first bit is parameters for the *job . system*            informing on who you are, which type of ressources you need and for how long
-
-   •  Once you are done, save it and run it using 
-
-```
-sbatch examplejob.sh
-```
-
-   • You can check what is the status of your job using 
-
-```
-squeue -u <yourusername>
-```
-
-   • Once this place is empty, your job ran and what would have printed to your screen is into *prcoessrads.out*. You should also have recieved an email!
-
-       
-   
-5. The process_radtags program has written a log file into the output directory.
-        Examine the log and answer the following questions:
-    
-    -   What is the purpose of the four different output files for each set of barcodes?
-    
-    -   How many raw reads were there?
-    
-    -   How many reads were retained?
-    
-
-*Congratulations, you reached the end of Exercise 1. Have a breathe, help your fellow attendees, grab a coffee and we will be back shortly to call variants de-novo*
-
-[Jump to exercise II](stacks_exerciseII_denovo)  
-[Jump back to Stacks intro](stacks.md)  
-[Jump back to the main workshop schedule](https://otagomohio.github.io/2019-06-11_GBS_EE/)
+Well done! Have a breath, sit back or help your neighbour, we will be back shortly!
