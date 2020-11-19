@@ -9,11 +9,6 @@
 
 The goal of this first exercise is to take you from raw reads data to individual sample files.
 
-• This first data set comprises just a small proportion of a lane of single-end
-standard RAD data.
-
-• You will use this first dataset to become familiar with the structure of RAD sequences, as well as to become proficient with the pre-processing (i.e. cleaning and de-multiplexing) of data before alignment or assembly. 
-
 ## Part 1: Single-end reads
 
 The first step in the analysis of all short-read sequencing data, including RAD-seq
