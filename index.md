@@ -25,8 +25,8 @@ Time |  Lesson
 11:00-11:15 | *Break* 
 11:15-12:30 | [SNP calling in the absence of a genome part 1](sessions/stacks.md) 
 12:15-13:00 | *Lunch Break* | 
-13:00-14:30 | [SNP calling in the absence of a genome part 2](sessions/stacks.md) 
-13:00-14:30 | [SNP calling with a reference genome](sessions/stacks.md) 
+13:00-13:30 | [SNP calling in the absence of a genome part 2](sessions/stacks.md) 
+13:30-14:30 | [SNP calling with a reference genome](sessions/stacks.md) 
 14:30-14:45 | *Break* 
 14:45-16:30 | [Filtering your SNPs](sessions/filteringSNPs.md) 
 16:30 | End of the day 
