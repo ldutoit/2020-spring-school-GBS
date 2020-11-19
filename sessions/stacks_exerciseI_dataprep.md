@@ -35,33 +35,37 @@ derived.
 
     
     • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different        steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
-
-       cd /nesi/nobackup/XXX/users/<yourusername>
-
-    • Once there, create the directory: ```/nesi/nobackup/nesi02659/users/<yourusername>/GBS``` (by using `mkdir GBS`) and then `cd` into `working`
-        so we can create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within
+       
+       ```cd /nesi/nobackup/XXX/users/<yourusername>```
+       
+    • Once there, create the directory:and then change directory into `GBS`:
+        ``` 
+        mkdir GBS
+        cd GBS
+        ```
+    
+    
+        We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within
         your hierarchy. You’ll be making many directories, so stay organized!
     
     •Each step of your analysis goes into the hierarchy of the workspace, and each step of  
-        the analysis takes its input from one directory and places it into another directory, this
-        is known as a ‘waterfall workspace’. We will name the directories in a way that
-        correspond to each stage and that allow us to remember where they are. A well
+        the analysis takes its input from one directory and places it into another director. We will name the                   directories in a way that correspond to each stage and that allow us to remember where they are. A well
         organized workspace makes analyses easier and prevents data from being overwritten.
     
-    • First let's make a few directories. In ```working```, create a directory called ```dataprep``` to contain all the data        for this exercise. Inside that directory create two additional directories: ```lane1``` and ```samples```. 
+    • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data        for this exercise. Inside that directory create two additional directories: ```lane1``` and ```samples```. 
     
-    • As a check that we've set up our 'waterfall workspace' correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
+    • As a check that we've set up our workspace correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
     
     ```
-    working/:
+    GBS/:
     dataprep
 
-    working/dataprep:
+    GBS/dataprep:
     lane1  samples
 
-    working/dataprep/lane1:
+    GBS/dataprep/lane1:
 
-    working/dataprep/samples:
+    GBS/dataprep/samples:
     
     ```
     
@@ -69,53 +73,21 @@ derived.
        `/nesi/nobackup/nesi02659/source_data/clean/lane1.tar` 
        (*hint*: `cp /path/to/what/you/want/to/copy /destination/you/want/it/to/go`)          
     
-    • `cd` to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. We realise that we have not told you how         to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information           on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).     
+    • `cd` to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).     
 
-2. Have a look at what is there now. These gz-compressed fastq files have millions of reads in them, too many for you to examine in a
-spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
+2. Have a look at what is there now. These gz-compressed fastq files have millions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
 (the ```less``` command may be of use).
     
-    • You should see multiple different lines in each file: some starting with @, lines that only have +, lines with nucleotides (e.g. A, C, G, T), and lines with weird combinations of other ascii characters.
-    
-    • How does this FASTQ file format work? (*hint*: your friendly search engine may come in handy!)
-    
-    • How are quality scores for the reads encoded?
-    
-    • How could you tell by eye which type of encoding your data are using (i.e. PHRED33 or PHRED64)?
-    
+3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. We'll save you the trouble of loading it ... This link [](...) is the fastqc report for file ...
 
-3. Let's have a closer look at this data. [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is a common software to quality-control a fastq file. 
+Should you have wished to run this yourself:
 
-    • Let's run ```fastqc``` on one of our fastq files. To do so, you will first need to find fastqc. This program is available on the          server but it is not *loaded*. If all the softwares installed on the server were accessible at the same time it would          be one happy mess. Therefore, we load modules for specific programs when we actually need to use them.
-    
-    • To ```find``` and ```load``` our first module
-       
-       #To see all the modules
-       module avail
-                                       
-       #The below command can help find a module
-       module spider fastqc
-                     
-      That command should present you with some information about 
-      modules that have a closely matching name.
-      You can then load your module of interest, in our case FastQC
-                     
-       module load FastQC # Case-sensitive, so get the capitalization right!
-       module list # View your loaded modules
-       
-     This list resets every time you log off Mahuika, so you will need to remember to reload the module(s) you need when you log in again.
-     
-    • Use the ```--help``` of ```fastqc``` to run it on any single fastq file of your choice (note, the name of the executable `fastqc` is all lower case...welcome to the club of frustration at capitalization of program names not matching up to their documentation!).
-                         
-    • Run `ls` in your lane1 directory: what outputs did fastqc create?
-    
-    • Let's try to copy the html file that fastqc created to your local computer in order to visualise it.
-       
-    • Open a new terminal window **without closing the current one** and stay on your local computer (i.e. do **not** login to mahuika). 
-    
-    • Check out [how to copy files](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP). (*Hint:* To identify the path to the file on Mahuika,          use the ```pwd``` command in the lane1 directory on the terminal window that is logged into Mahuika...but don't forget to add the name of the file you want to copy to the end of this path).
-       
-    • Once you have this file on your local computer, just double-click on it to open it with your favorite browser.
+```
+module load FastQC
+fastqc *gz
+`` 
+
+Let's look at this repoty:
 
     • What is this weird thing in the base-pair content from base 7 to 12-13?
 
@@ -126,8 +98,7 @@ spreadsheet or word processor. However, we can examine the contents of the set o
       alignments to a reference genome. However, low quality data can
       affect downstream analysis for *de novo* and reference-based approaches, producing false positives, such as errant SNP predictions.
 
-4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our
-samples. Take advantage of the Stacks [manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
+4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. Take advantage of the Stacks [manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
 process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. Do not run the commands you figure out just yet, but first follow through the points below:
     
   • Get back into your ```dataprep``` folder
