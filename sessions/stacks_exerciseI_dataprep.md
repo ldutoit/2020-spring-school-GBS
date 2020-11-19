@@ -74,9 +74,9 @@ module load FastQC
 fastqc *gz
 ```
 
-   •  You just generated a few FastQC reports. Use the Jupyyrt hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`).
+   •  You just generated a few FastQC reports. Use the Jupyyrt hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`). You can then double click on your folder
    
-   <p align="center"><br><img src="iimg/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p></p>
+   <p align="center"><br><img src="img/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p></p>
 
    
    
@@ -95,16 +95,10 @@ Let's look at this FastQC report together:
 4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
 process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. 
     
-  • Get back into your ```dataprep``` folder by running:
-  
-  ```cd ../dataprep```
+  • Get back into your ```dataprep``` folder by running ```cd ../dataprep``` in the terminal.
     
-  • It is time to load the ```stacks``` module to be able to access the ```process_radtags``` command. Find it load it.
-  
-  ```
-  module spider Stacks
-  module load Stacks
-  ```
+  • It is time to load the ```Stacks``` module to be able to access the ```process_radtags``` command. Find the module  and load it (*hint* Do for Stacks what we did above for FastQC).
+
   
    • You will need to specify the set of barcodes used in the construction of the RAD library.
         Remember, each P1 adaptor in RAD has a particular DNA sequence (an inline
