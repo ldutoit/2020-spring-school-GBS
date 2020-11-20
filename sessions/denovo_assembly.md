@@ -11,7 +11,7 @@
 
 ### Introduction
 
-1. In this second exercise we will  be working on  threespine stickleback data sampled from throughout Oregon, on the west coast of the United States. These data consist of three populations: a coastal marine population, a coastal freshwater, and an inland river population. These stickleback can be found in a
+1. In this second exercise we will  be working on  threespine stickleback data sampled from throughout Oregon, on the west coast of the United States. These data consist of 30 samples in three populations: a coastal marine population, a coastal freshwater, and an inland river population. These stickleback can be found in a
 number of habitats from costal
 marine and freshwater habitats, to
 inland river habitats, to high
@@ -40,45 +40,52 @@ This approach is described more in [Paris et al. (2017)](https://besjournals.onl
 
 *"After putative alleles are formed, stacks performs a search to match alleles together into putative loci. This search is governed by the M parameter, which controls for the maximum number of mismatches allowed between putative alleles [...] Correctly setting **M** requires a balance – set it too low and alleles from the same locus will not collapse, set it too high and paralogous or repetitive loci will incorrectly merge together."*
 
-As a giant research team,  we will run the *denovo* pipeline with different parameters. The results from the different parameters will be shared using [Th Google sheet]. We'll be able to use the best dataset downstream for population genetics analyses and comparison with a pipeline that utilises a reference genome.
+As a giant research team,  we will run the *denovo* pipeline with different parameters. The results from the different parameters will be shared using [The Google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). We'll be able to use the best dataset downstream for population genetics analyses and comparison with a pipeline that utilises a reference genome.
 
+## Build your denovo_map.pl command
 
-2. We will assemble loci and use the collaborative power of this classroom to determine the best parameters.  
-3. In your ```GBS``` workspace, create a directory called ```output_denovo``` to contain
+1. We will assemble loci and use the collaborative power of this classroom to determine the best parameters. 
+
+2. In your ```GBS``` workspace, create a directory called ```output_denovo``` to contain
 the assembled data for this exercise.
 
-4. Run Stacks’ denovo_map.pl pipeline program according to the following set of instructions:
+3. To avoid duplicating the data, we will use a link to the source data. This effectively creates a shortcut to another path (WRITE PROTECT IT)  without copying all the files. 
+ln -s /path/you/want/to/link . will create a shortcut of a given path right where you are! The raw data is in 
+```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/oregon_stickleback/``` Using the above example, create a link to this folder right here!
+
+
+4. Run Stacks’ denovo_map.pl pipeline program according to the following set of instructions. Following those instructions you will bit by bit create the complete `denovo_map.pl` command:
     
-    • Load the ```Stacks``` module
+    • Make sure you load the ```Stacks``` module (you can check if you already loaded it using `module list`
     
-    • Get back in the ```GBS/denovo``` folder.
+    • Get back in the ```GBS``` folder if you wandered away.
     
-    • As for the previous exercise, information on denovo_map.pl and its parameters can be found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php)
+    • Information on denovo_map.pl and its parameters can be found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php)
     
-    •We want Stacks to understand which individuals in our study belong to which population. To specify this, create a file ```complete_popmap.txt``` in the denovo directory called popmap, using
-        an editor. The file should be formatted in 2 columns like [this](http://catchenlab.life.illinois.edu/stacks/manual/#popmap). Include all 30 samples in this file and specify which individuals            belong to which populations. You must supply the population map to denovo_map.pl when you execute it. You could for example use ```ls -1 *fa.gz``` to see all the samples in a list before adding the populations. Add the populations as simple integers (i.e. 1, 2 and 3) t
+    • We want Stacks to understand which individuals in our study belong to which population. Stacks use a so-called population map. The file contains sample names as well as populations. The file should be formatted in 2 columns like [this](http://catchenlab.life.illinois.edu/stacks/manual/#popmap). All 30 samples are at the file path below. Copy it in the folder `GBS you` should currently be in.
+    
+    ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/denovo_popmap.txt```
+
+    • Make sure you specify this to the denoco_map.pl command using the parameters help found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php)
     
     • There are three important parameters that must be specified to denovo_map.pl, the
-        minimum stack depth (`m`), the distance allowed between stacks (`M`), and the distance allowed
-        between catalog loci (`n`). Use the values we determined for these parameters in the
+        minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed
+        between catalog loci (`n`) **that should be M+2**. Use the values we determined for these parameters in the
         previous exercise, but do not restrict the loci to just those found in 80% like we did in the opt runs.
     
-    Choose which parameters you want to run, GOOGLE SHEET
-    • Also, you must set the stacks directory as the output, and use 6 threads (6 CPUs so your analysis finishes faster than 1!).
-        
-    • Finally, specify the path to the directory containing your sample files. The
-        denovo_map.pl program will read the sample names out of the population map, and
-        look for them in the samples directory you specify.
-    • To optimize for r80 loci you will need to tell denovo_map.pl to use the '''-r''' parameter to filter for loci in 80% of the
-        samples) program. We will keep ```m``` at 3. Initially, we will set M to 4. We will also follow the general rule of ```M = n``` and we will tell [denovo_map.pl](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php) to output to the M4 folder.
+    •  Choose which parameters you want to run, not overlapping with other people parameters and insert them in [The google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0)
     
-        Put the command here : ....
+    • You must set the stacks directory as the output, and use 6 threads (6 CPUs so your analysis finishes faster than 1!).
+        
+    • Specify the path to the directory containing your sample files (*hint* use your *oregon_stickleback/* link here!.       The denovo_map.pl program will read the sample names out of the population map, and
+        look for them in the samples directory you specify.
+    
+    • To optimize for r80 loci you will need to tell denovo_map.pl to use the '''-r''' parameter to filter for loci in 80% of the samples) program.
+   
 
-    • Execute the Stacks pipeline. 
+    • Your command should be ready, try to execute the Stacks pipeline. 
 
-    let's look at it, is it starting alright? ...
-
-    hat should take approximately 30min, ideal time for a break! WAIT NO, DON'T DO THAT THIS IS HORRIBLE PRACTICE
+    • Is it starting alright?  **WAIT NO, DON'T DO THAT THIS IS HORRIBLE PRACTICE use `control + c` to stop your command**
 
     Introduce SLURM
 
@@ -86,10 +93,10 @@ the assembled data for this exercise.
 
 • copy an example jobfile into this directory. The example is at : '''/nesi/nobackup/nesi02659/source_data/example_job.sh'''
 
-Describe the basic parameters in there, link it to the actual help of batch.
 
+• Open it with a text edtor, have a look at what is there. As you can see, the first bit is parameters for the job. system informing on who you are, which type of ressources you need and for how long.
 
-• Open it with nano, have a look at what is there. As you can see, the first bit is parameters for the job . system informing on who you are, which type of ressources you need and for how long
+• There are a number of [...] followed by a comment starting by `#` that tells you what should be there, fill in your job script.
 
 • Once you are done, save it and run it using
 
@@ -98,13 +105,18 @@ Describe the basic parameters in there, link it to the actual help of batch.
 • You can check what is the status of your job using
 
     squeue -u <yourusername>
-• Once this place is empty, your job ran and what would have printed to your screen is into prcoessrads.out. You should also have recieved an email!
     
-5. Examine the Stacks log and output files when execution is complete.
+• Once this place is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 30mn to run, so in the meantime, sit back and relax, we are getting to lunch!
+
+
+### Getting the data from our run together,
+
+5. Examine the Stacks log and output files when execution is complete. It should be in output_denovo
     
-    • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl    will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of  each sample. Find this table in the log, what were the depths of coverage? 
+    • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl   will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of  each sample. Find this table in the log, what were the depths of coverage? 
     
-    • Examine the output of the populations program in the log.
+    • Examine the 
+    of the populations program in the log.
     
     • How many loci were identified?
 
@@ -120,69 +132,5 @@ Describe the basic parameters in there, link it to the actual help of batch.
         populations? [HINT: The less -S command may help you view these files easily by avoiding the wrapping]
 
 
-FOLLOWING X, what are the best parameters? 
-
-
-##  Running Stacks denovo
-
-1. Go to your ```XXX``` workspace, create a directory called ```denovo``` to contain all the
-data for this exercise. *Inside* that directory, create two additional directories:
-```samples```, and ```opt```. 
-
-   To save time, we have already cleaned and demultiplexed this
-   data and will start from the cleaned samples stage. Inside the opt directory, create four
-   additional directories: ```M4```, ```M5```, ```M6```   and ```M7```. 
-
-   • Go to ```samples``` directory. Copy the dataset below in the ```samples``` directory: ```/nesi/nobackup/nesi02659/source_data/denovo/oregon_stickleback.tar```
-    
-   • Extract it. The unarchived dataset contains 30 stickleback
-     samples (Catchen, et al., [2013](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330)), but we will use only 3 of them (`cs_1335.01`,  `pcr_1211.04`, `stl_1274.33`) in this first part of the exercise as we will run denovo_map.pl just a few times for optimisation. 
-     
-2. We will run the Stacks’ ```denovo_map.pl``` pipeline program, each time changing the value for
-```M```. `denovo_map.pl` will run ustacks, cstacks, and sstacks on the individuals in our
-study as well as the ```population``` program. The set of instructions below should help you build your command.
-    
-   • Get back into the ```opt``` folder. (*Hint*:  Use```pwd``` if you don't know where you are anymore.
-    
-
-    
-   • Information on denovo_map.pl and its parameters can be found [online]( http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php)
-    
-   • We want Stacks to only use the 3 individuals in our parameter optimization (cs_1335.01,  pcr_1211.04, stl_1274.33).
-   
-   • To specify this, create a file in the opt directory called ```opt_popmap.txt```, using an editor.
-        The file should be formatted like [indicated in the manual](http://catchenlab.life.illinois.edu/stacks/manual/#popmap).        
-         Note: do not include the extension ```.fa.gz``` in the sample name.
-    
-   • Include samples in this file and **specify that all individuals belong to one
-        single population** (e.g. give them all the same population code). You will need to supply this        ```opt_popmap.txt```population map to [denovo_map.pl](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php) when you
-        execute it for each parameter run.
-    
-   • To optimize for r80 loci you will need to tell denovo_map.pl to use the '''-r''' parameter to filter for loci in 80% of the
-        samples) program. We will keep ```m``` at 3. Initially, we will set M to 4. We will also follow the general rule of ```M = n``` and we will tell [denovo_map.pl](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php) to output to the M4 folder.
-        
-   • With this information, you should be able to launch the M4 run now. It will take a couple of minutes.
-       
-3. Once done, you should now see the denovo_map.pl output files in the directory M4.
-
-    • After M4 is completed, do the same process for M = 5 through M = 7 (this should take around 10min total).    
-    
-    • While you are running M5 through m7, open a *new command window*, login to Mahuika and re-access       the reserved machine ```ssh -Y ga-vl01```. Then go to your ```working/denovo``` folder so that you can keep working while M5 through M7 are running.
-    
-    • To see how many r80 loci were assembled for each parameter run you will want to start looking at the                        ```populations.hapstats.tsv``` file using the [Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/#files)
-    to inform you on the data
-    contained in each of the columns. 
-
-    • What is the number of the first locus assembled for M4?
-
-    • What is the number of the last locus assembled for M4?
-    
-    • How many loci in total? (*Hint:* count the lines)
-        
-    • Using this technique, how many loci were assembled for M5 to M7 once they finish running?
-    
-    • Which iteration of M provided the highest number of r80 loci?   
-
-You should now be able to choose your optimised parameters according to the Paris et al. (2017) method! ("select those values which maximize the number of polymorphic loci found in 80% of the individuals in your study")
-
+FOLLOWING X, what are the best parameters? Remember, we are looking for the run that maximises the number of loci at `r80`.
 
