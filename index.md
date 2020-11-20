@@ -23,7 +23,7 @@ Time |  Lesson
 09:30-10:30 | Keynote Speaker: [Dr. Alana alexander](https://gemmell-lab.otago.ac.nz/our-team/19-team/research-and-postdoctoral-research-fellows/138-dr-alana-alexander)
 10:30-11:00 | [Data101: From raw data to individual samples files](sessions/dataprep.md)  
 11:00-11:15 | *Break* 
-11:15-12:15 | [De-novo assembly without a reference genome](sessions/denovo_assembly.mdd) 
+11:15-12:15 | [De-novo assembly without a reference genome](sessions/denovo_assembly.md) 
 12:15-13:00 | *Lunch Break* | 
 13:00-13:30 | [De-novo assembly without a reference genome](sessions/denovo_assembly.md) 
 13:30-14:30 | [SNP calling with a reference genome](sessions/stacks_exerciseIII_withreference.md) 
