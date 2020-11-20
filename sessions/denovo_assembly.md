@@ -4,9 +4,6 @@
 
 **Adapted by:** Ludovic Dutoit
 
-
-## Exercise 2: Call variants in the absence of a reference genome
-
 ### Goals
   
   - Learn to call SNPs without a reference genome and to optimise the procedure
