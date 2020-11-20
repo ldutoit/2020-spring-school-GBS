@@ -1,4 +1,4 @@
-# Exercise I. Data preparation    
+# Data101: From raw data to individual samples files    
 
 **Developed by:** Julian Catchen, Nicolas Rochette
 
