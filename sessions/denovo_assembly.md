@@ -1,4 +1,4 @@
-# De-novo assembly of RAD tags without a genome
+# De-novo assembly without a reference genome
 
 **Developed by:** Julian Catchen, Nicolas Rochette
 
