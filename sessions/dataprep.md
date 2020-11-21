@@ -67,7 +67,7 @@ OR from the launch of the Jupyter terminal:
    • `cd`  to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).    
     *hint* : you might try searching for "How to extract a tar archive"
 
-2. Have a look at what is there now. These gz-compressed fastq files have millions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
+2. Have a look at what is there now. These gz-compressed fastq files have milions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
 (the ```less``` command may be of use).
     
 3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on  these files. load the module first and then run FastQC over all the gzipped file. We will help you on that one: 
