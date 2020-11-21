@@ -93,7 +93,7 @@ the assembled data for this exercise.
 
   • copy an example jobfile into this directory. The example is at :                  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/denovojob.sh```
 
-  • Open it with a text editor, have a look at what is there. The first bit are parameters for the job that starts with . system informing on who you are, which type of ressources you need and for how long.
+  • Open it with a text editor, have a look at what is there. The first bit are parameters for the job that starts with . system informing on who you are, which type of resources you need and for how long.
 
   • There are a number of <...> followed by a comment starting by `#` that tells you what should be there, fill in your job script.
 
