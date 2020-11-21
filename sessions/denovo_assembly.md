@@ -89,7 +89,7 @@ the assembled data for this exercise.
 
     • Is it starting alright?  Good, now  **Use `control + c` to stop your command**
 
-    5.Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run pur command directly. On a day to day basis, you would be evolving on the login node (i.e. The place you reach when you login). All the resources are tucked away from the login node. You generally run your commands as jobs that are sent to this resources, not on the login node itself. We will use this denovo_map.pl command as a perfect example to run our first job.
+5.Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run pur command directly. On a day to day basis, you would be evolving on the login node (i.e. The place you reach when you login). All the resources are tucked away from the login node. You generally run your commands as jobs that are sent to this resources, not on the login node itself. We will use this denovo_map.pl command as a perfect example to run our first job.
 
   • copy an example jobfile into this directory. The example is at :                  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/denovojob.sh```
 
@@ -117,8 +117,7 @@ the assembled data for this exercise.
     
     • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl   will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of  each sample. Find this table in the log, what were the depths of coverage? 
     
-    • Examine the 
-    of the populations program in the log.
+    • Examine the output of the populations program in the file XXXXX.log inside your `output_denovo` folder. (*hint*: use the `less` command).
     
     • How many loci were identified?
 
