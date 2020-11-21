@@ -33,7 +33,9 @@ in an optimal way. Stack (i.e. locus) formation is controlled by three main
 parameters: 
 
 -m :  the minimum amount of reads to create a locus)
+
 **-M : the number of mismatches allowed between alleles of the same locus**
+
 -n : The number of mismatches between between loci between individuals
 
 If that does not make sense or you would like to know more, have a quick read of [this explanation from the manual](http://catchenlab.life.illinois.edu/stacks/param_tut.php).
