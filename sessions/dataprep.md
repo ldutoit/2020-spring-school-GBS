@@ -9,6 +9,9 @@
 
 The goal of this first exercise is to take you from raw reads data to individual sample files.
 
+ - We will check the quality of the data
+ - Assign reads to individual samples
+
 ## Part 1: Single-end reads
 
 The first step in the analysis of all short-read sequencing data, including RAD-seq
@@ -38,13 +41,13 @@ OR from the launch of the Jupyter terminal:
         cd GBS
         
         
-   • The exercise from now on is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not tho, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
+   • The exercise from now on is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
       
-   •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! Each step of your analysis goes into the hierarchy of the workspace, and each step of  the analysis takes its input from one directory and places it into another directory. We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
+   •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
     
-  • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. **Inside** that directory we will create two additional directories: ```lane1``` and ```samples```. 
+  • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. **Inside** that directory ``dataprep`` we will create two additional directories: ```lane1``` and ```samples```. 
     
-  • As a check that we've set up our workspace correctly, go back to your ```<username>``` directory (*hint*: `cd ..`) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
+  • As a check that we've set up our workspace correctly, go back to your ```GBS``` directory (*hint*: `cd ..` goes up **one** level) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
     
     GBS/:
     dataprep
@@ -58,7 +61,7 @@ OR from the launch of the Jupyter terminal:
     
     
    • Copy the data set 1 containing the raw reads  to your ```lane1``` directory. The data set is in the file
-       `/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1.tar` 
+       `/nesi/project/nesi02659/obss_2020/resources/day3/lane1.tar` 
        (*hint*: `cp /path/to/what/you/want/to/copy /destination/you/want/it/to/go`)          
     
    • `cd`  to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).    
@@ -67,17 +70,22 @@ OR from the launch of the Jupyter terminal:
 2. Have a look at what is there now. These gz-compressed fastq files have millions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
 (the ```less``` command may be of use).
     
-3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on  these files. load the module first and then run FastQC over all the gzipped file:
+3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on  these files. load the module first and then run FastQC over all the gzipped file. We will help you on that one: 
+
 
 ```
+module
+module spider fastqc 
 module load FastQC
 fastqc *gz
 ```
 
-   •  You just generated a few FastQC reports. Use the Jupyyrt hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`). You can then double click on your folder
+1. `module purge` get rids of any pre-existing potentially conflicting modules. 2. `module spider` simply search for a module called FastQC. 3.Once we found this module we can use `module load` to load the module. 4. Finally, we run `fastqc`  using of the wildcard `*` to select all *gz* files at once:
+
+
+   •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`). You can then double click on a fastqc html report. 
    
    <p align="center"><br><img src="img/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p></p>
-
    
    
 
@@ -95,7 +103,7 @@ Let's look at this FastQC report together:
 4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
 process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. 
     
-  • Get back into your ```dataprep``` folder by running ```cd ../dataprep``` in the terminal.
+  • Get back into your ```dataprep``` folder by running ```cd ../``` in the terminal. (*hint*: if you are lost use `pwd` to check where you are.
     
   • It is time to load the ```Stacks``` module to be able to access the ```process_radtags``` command. Find the module  and load it (*hint* Do for Stacks what we did above for FastQC).
 
@@ -105,7 +113,7 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
         barcode) that gets sequenced first, allowing data to be associated with samples such as
         individuals or populations.
     
-   • To save you some time, the barcode file is at:  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/lane1_barcodes.txt``` Copy it in `dataprep` where you currently are.
+   • To save you some time, the barcode file is at:  ```/nesi//project/nesi02659/obss_2020/resources/day3/lane1_barcodes.txt``` Copy it in `dataprep` where you currently are.
    
 
    •  Normally, these sample names would
@@ -117,15 +125,19 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
         RAD library? (*Hint:* you can count the lines in the file using `wc -l lane1_barcodes.txt`)
         
       
-   • Have a look at the [help online](https://catchenlab.life.illinois.edu/stacks/comp/process_radtags.php) to prepare          your `process_radtags` command.  You will need to specify the restriction enzyme used to construct the library          (SbfI), the directory of input files (the ```lane1``` directory), the list of barcodes, the output directory
-        (```samples```), and specify that process_radtags ```clean, discard, and rescue reads.``` as options of                 `process_radtags`. 
-        
-   • You should now be able to run the ```process_radtags``` command from the ```dataprep``` directory. It will take a couple of minutes to run. 
+   • Have a look at the [help online](https://catchenlab.life.illinois.edu/stacks/comp/process_radtags.php) to prepare your `process_radtags` command.  You will need to specify:
+   - the restriction enzyme used to construct the library (SbfI)
+   - the directory of input files (the ```lane1``` directory)
+   - the list of barcodes, the output directory
+        (```samples```)
+   - the fact that the input files are gzipped
    
-   -   If you find that something is possibly missing from your process_radtags
-                input, correct the error and give running process_radtags another try.
-
-   • The process_radtags program will write a log file into the output directory. Have a look in there.
+   
+   - Finally,  specify that process_radtags needs  ```clean, discard, and rescue reads.``` as options of                 `process_radtags`. 
+        
+   • You should now be able to run the ```process_radtags``` command from the ```dataprep``` directory. It will take a couple of minutes to run. Take a breath or think about what you just did.
+   
+   • The process_radtags program will write a log file  ... into the output directory. Have a look in there.
         Examine the log and answer the following questions:
     
   -   How many reads were retained?
