@@ -84,9 +84,7 @@ the assembled data for this exercise.
         
     • Specify the path to the directory containing your sample files (*hint* use your *oregon_stickleback/* link here!.       The denovo_map.pl program will read the sample names out of the population map, and
         look for them in the samples directory you specify.
-   
-    •  Finally tell stacks to output a `vcf` file and a `structure` file, those will be useful later for population structure analyses! To do so FINISH THIS
-    
+       
     • Your command should be ready, try to execute the Stacks pipeline. 
 
     • Is it starting alright?  Good, now  **Use `control + c` to stop your command**
