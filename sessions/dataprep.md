@@ -31,7 +31,7 @@ derived.
        
 OR from the launch of the Jupyter terminal:
      
-       cd users/<yourusername>/
+       cd obss_2020/users/
        
 *NOTE*: If you get lost an any time today, you can always cd in your home following this upper link.
        
