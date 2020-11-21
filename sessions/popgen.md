@@ -17,8 +17,8 @@ Each of you does one of the two...
 
 Run Structure
 
-Then all into R into the script [run_popgen.R](run_popgen.R)
-
+Then all into R into the script [run_popgen.R](run_popgen.R) USE BULLY TUTO
+ 
 The code is pre-made.
 
 ### Structure
