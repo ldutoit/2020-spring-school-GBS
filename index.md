@@ -26,7 +26,7 @@ Time |  Lesson
 11:15-12:15 | [De-novo assembly without a reference genome](sessions/denovo_assembly.md) 
 12:15-13:00 | *Lunch Break* | 
 13:00-13:30 | [De-novo assembly without a reference genome](sessions/denovo_assembly.md) 
-13:30-14:30 | [SNP calling with a reference genome](sessions/stacks_exerciseIII_withreference.md) 
+13:30-14:30 | [SNP calling with a reference genome](sessions/reference_assembly.md) 
 14:30-14:45 | *Break* 
 14:45-16:30 | [Population genetics analyses](sessions/popgen.md) 
 16:30 | End of the day 
