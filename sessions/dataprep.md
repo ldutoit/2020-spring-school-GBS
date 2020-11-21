@@ -30,7 +30,7 @@ OR from the launch of the Jupyter terminal:
      
        cd users/<yourusername>/
        
-*NOTE* If you get lost an any time today, you can always cd in your home following this upper link.
+*NOTE*: If you get lost an any time today, you can always cd in your home following this upper link.
        
    • Once there, create the directory `GBS` and then change directory into `GBS`:
      
@@ -133,7 +133,7 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
   -   Of those discarded, what were the reasons? 
     
   -   In the process_radtags log file, what can the list of “sequences not recorded” tell
-                you about the barcodes analyzed and about the sequencing quality in general?
+                you about the barcodes analysed and about the sequencing quality in general?
 
 
 Well done! Have a breath, sit back or help your neighbour, we will be back shortly!
