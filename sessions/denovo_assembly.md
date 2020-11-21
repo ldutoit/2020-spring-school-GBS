@@ -11,7 +11,7 @@
 
 ### Introduction
 
-1. In this second exercise we will  be working on  threespine stickleback data sampled from throughout Oregon, on the west coast of the United States. These data consist of 30 samples in three populations: a coastal marine population, a coastal freshwater, and an inland river population. These stickleback can be found in a
+In this second exercise we will  be working on  threespine stickleback data sampled from throughout Oregon, on the west coast of the United States. These data consist of 30 samples in three populations: a coastal marine population, a coastal freshwater, and an inland river population. These stickleback can be found in a
 number of habitats from costal
 marine and freshwater habitats, to
 inland river habitats, to high
@@ -28,13 +28,19 @@ the background of this study, see [Catchen et al, 2013](https://onlinelibrary.wi
 Without access to a reference genome, we
 want to assemble the RAD loci and
 examine population structure. However, before we can do that, we want to explore
-the *de novo* parameter space in order to be confident that we are assembling our data
-in an optimal way. Stack formation is controlled by three main
-parameters: m (the minimum read depth); M (the number of mismatches between
-alleles) and n (the number of mismatches between loci in the catalog). Here, we will
-optimize M for the stickleback data using a subset of the full dataset provided. After
-this, we can use the optimal value we have found for M in the *de novo* exercise below. We will be using the guidelines of parameter optimization as outlined in [Paris
-et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess which value for M recovers the highest number of new polymorphic loci found across 80% of the individuals (r80 loci).
+the *de novo* parameter space for the in order to be confident that we are assembling our data
+in an optimal way. Stack (i.e. locus) formation is controlled by three main
+parameters: 
+
+-m :  the minimum amount of reads to create a locus)
+**-M : the number of mismatches allowed between alleles of the same locus**
+-n : The number of mismatches between between loci between individuals
+
+If that does not make sense or you would like to know more, have a quick read of [this explanation from the manual](http://catchenlab.life.illinois.edu/stacks/param_tut.php).
+
+Here, we will optimize the parameter M using the collaborative power of our wonderful team. After
+We will be using the guidelines of parameter optimization as outlined in [Paris
+et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess which parameters value for M recovers the highest number of new polymorphic loci found across 80% of the individuals (r80 loci).
 
 This approach is described more in [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775)
 
@@ -49,31 +55,30 @@ As a giant research team,  we will run the *denovo* pipeline with different para
 2. In your ```GBS``` workspace, create a directory called ```output_denovo``` to contain
 the assembled data for this exercise.
 
-3. To avoid duplicating the data, we will use a link to the source data. This effectively creates a shortcut to another path (WRITE PROTECT IT)  without copying all the files. 
-ln -s /path/you/want/to/link . will create a shortcut of a given path right where you are! The raw data is in 
+3. To avoid duplicating the raw data for each of us, we will use a link to the source data. This effectively creates a shortcut to another path without copying all the files. 
+`ln -s /path/you/want/to/link` will create a shortcut to a given path right where you are! The raw data is in 
 ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/oregon_stickleback/``` Using the above example, create a link to this folder right here!
 
 
 4. Run Stacks’ denovo_map.pl pipeline program according to the following set of instructions. Following those instructions you will bit by bit create the complete `denovo_map.pl` command:
     
-    • Make sure you load the ```Stacks``` module (you can check if you already loaded it using `module list`
+    • Make sure you load the ```Stacks``` module (you can check if you already loaded it using `module list`)
     
     • Get back in the ```GBS``` folder if you wandered away.
     
-    • Information on denovo_map.pl and its parameters can be found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php)
+    • Information on denovo_map.pl and its parameters can be found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php). You will use this below to build your command.
     
     • We want Stacks to understand which individuals in our study belong to which population. Stacks use a so-called population map. The file contains sample names as well as populations. The file should be formatted in 2 columns like [this](http://catchenlab.life.illinois.edu/stacks/manual/#popmap). All 30 samples are at the file path below. Copy it in the folder `GBS you` should currently be in.
     
     ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/denovo_popmap.txt```
 
-    • Make sure you specify this to the denoco_map.pl command using the parameters help found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php)
+    • Make sure you specify this population map to the denovo_map.pl command.
     
     • There are three important parameters that must be specified to denovo_map.pl, the
         minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed
         between catalog loci (`n`) **that should be M+2**. Use the values we determined for these parameters in the
         previous exercise, but do not restrict the loci to just those found in 80% like we did in the opt runs.
-    
-    •  Choose which parameters you want to run, not overlapping with other people parameters and insert them in [The google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0)
+        Choose which values of M you want to run, not overlapping with other people parameters and insert them in [The google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M and n(which should be M+2) as well as `-r` anywhere between 50 and 100%.
     
     • You must set the stacks directory as the output, and use 6 threads (6 CPUs so your analysis finishes faster than 1!).
         
@@ -85,28 +90,25 @@ ln -s /path/you/want/to/link . will create a shortcut of a given path right wher
 
     • Your command should be ready, try to execute the Stacks pipeline. 
 
-    • Is it starting alright?  **WAIT NO, DON'T DO THAT THIS IS HORRIBLE PRACTICE use `control + c` to stop your command**
+    • Is it starting alright?  Good, now  **Use `control + c` to stop your command**
 
-    Introduce SLURM
+    5.Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run pur command directly. On a day to day basis, you would be evolving on the login node (i.e. The place you reach when you login). All the resources are tucked away from the login node. You generally run your commands as jobs that are sent to this resources, not on the login node itself. We will use this denovo_map.pl command as a perfect example to run our first job.
 
-    4.Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this iallows us to run pur command directly. On a day to day basis, you would be evolving on the login node (i.e. The place you reach when you login). All the resources are tucked away from the login node. You generally run your commands as jobs that are sent to this resources, not on the login node itself. We will use this process_radtags command as a perfect example to run our first job.
+  • copy an example jobfile into this directory. The example is at :                  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/denovojob.sh```
 
-• copy an example jobfile into this directory. The example is at : '''/nesi/nobackup/nesi02659/source_data/example_job.sh'''
+  • Open it with a text editor, have a look at what is there. The first bit are parameters for the job that starts with . system informing on who you are, which type of ressources you need and for how long.
 
+  • There are a number of <...> followed by a comment starting by `#` that tells you what should be there, fill in your job script.
 
-• Open it with a text edtor, have a look at what is there. As you can see, the first bit is parameters for the job. system informing on who you are, which type of ressources you need and for how long.
+  • Once you are done, save it and run it using
 
-• There are a number of [...] followed by a comment starting by `#` that tells you what should be there, fill in your job script.
+    sbatch denovojob.sh
 
-• Once you are done, save it and run it using
-
-    sbatch examplejob.sh
-
-• You can check what is the status of your job using
+ • You can check what is the status of your job using
 
     squeue -u <yourusername>
     
-• Once this place is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 30mn to run, so in the meantime, sit back and relax, we are getting to lunch!
+ • Once this place is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 30mn to run, so in the meantime, sit back and relax, we are getting to lunch!
 
 
 ### Getting the data from our run together,
