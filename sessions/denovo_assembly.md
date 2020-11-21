@@ -84,10 +84,9 @@ the assembled data for this exercise.
         
     • Specify the path to the directory containing your sample files (*hint* use your *oregon_stickleback/* link here!.       The denovo_map.pl program will read the sample names out of the population map, and
         look for them in the samples directory you specify.
-    
-    • To optimize for r80 loci you will need to tell denovo_map.pl to use the '''-r''' parameter to filter for loci in 80% of the samples) program.
    
-
+    •  Finally tell stacks to output a `vcf` file and a `structure` file, those will be useful later for population structure analyses! To do so FINISH THIS
+    
     • Your command should be ready, try to execute the Stacks pipeline. 
 
     • Is it starting alright?  Good, now  **Use `control + c` to stop your command**
@@ -100,20 +99,23 @@ the assembled data for this exercise.
 
   • There are a number of <...> followed by a comment starting by `#` that tells you what should be there, fill in your job script.
 
-  • Once you are done, save it and run it using
+  • Once you are done, save it. Then run it using:
 
     sbatch denovojob.sh
+
 
  • You can check what is the status of your job using
 
     squeue -u <yourusername>
-    
- • Once this place is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 30mn to run, so in the meantime, sit back and relax, we are getting to lunch!
+ 
+ • We used a few basic options of sbatch, time, memory and ... . In reality, there are many many more options, have a quick look at sbatch --help out of interest. NeSI also has its own handy guide on how to submit a job [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job).
+
+• Once `squeue` is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 30mn to run, so in the meantime, sit back and relax, we are getting to lunch!
 
 
-### Getting the data from our run together,
+### Analysing the data from our collaborative optimisation
 
-5. Examine the Stacks log and output files when execution is complete. It should be in output_denovo
+5. Examine the Stacks log and output files when execution is complete. It should be in `output_denovo`
     
     • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl   will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of  each sample. Find this table in the log, what were the depths of coverage? 
     
@@ -134,5 +136,4 @@ the assembled data for this exercise.
         populations? [HINT: The less -S command may help you view these files easily by avoiding the wrapping]
 
 
-FOLLOWING X, what are the best parameters? Remember, we are looking for the run that maximises the number of loci at `r80`.
-
+Congratulations, you obtained variants.
