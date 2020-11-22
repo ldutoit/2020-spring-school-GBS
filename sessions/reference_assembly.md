@@ -36,7 +36,7 @@ refmap_map.pl has less options since the mapping take care of many of the steps 
 
 • Specify the path to the population map. We will be able to use the same popmap than for the denovo analysis, since we use the same samples. 
 
-• Specify r 80 f80 HOW...
+• We only want to keep the loci that are found in 80% of individuals. This is done by passing specific arguments to the `populations` software inside Stacks. add the following to your command: `-X "populations: -p 3 -r 0.50"`. Respect the quotes.
 
 • Is your command ready? Run it briefly to check that it starts properly, once it does **stop it using ctrl + c**
 
