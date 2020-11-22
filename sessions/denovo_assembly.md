@@ -23,26 +23,22 @@ Without access to a reference genome, we want to assemble the RAD loci and exami
 
 If that does not make sense or you would like to know more, have a quick read of [this explanation from the manual](http://catchenlab.life.illinois.edu/stacks/param_tut.php).
 
-Here, we will optimize the parameter M (description in bold above) using the collaborative power of all of us here today! We will be using the guidelines of parameter optimization as outlined in [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess value for the M parameter that recovers the highest number of polymorphic loci. [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) provides a description of this approach:
+Here, we will optimize the parameter M (description in bold above) using the collaborative power of all of us here today! We will be using the guidelines of parameter optimization as outlined in [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess value for the M parameter that recovers the highest number of polymorphic loci. [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) provides a description of this approach:  
 *"After putative alleles are formed, stacks performs a search to match alleles together into putative loci. This search is governed by the M parameter, which controls for the maximum number of mismatches allowed between putative alleles [...] Correctly setting **M** requires a balance – set it too low and alleles from the same locus will not collapse, set it too high and paralogous or repetitive loci will incorrectly merge together."*
 
-As a giant research team,  we will run the *denovo* pipeline with different parameters. The results from the different parameters will be shared using [The Google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). We'll be able to use the best dataset downstream for population genetics analyses and comparison with a pipeline that utilises a reference genome.
+As a giant research team, we will run the *denovo* pipeline with different parameters. The results from the different parameters will be shared using [this Google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). We'll be able to use the best dataset downstream for population genetics analyses and to compare with a pipeline that utilises a reference genome.
 
 ## Build your denovo_map.pl command
 
-1. We will assemble loci and use the collaborative power of this classroom to determine the best parameters. 
+1. In your ```GBS``` workspace, create a directory called ```output_denovo``` to contain the assembled data for this exercise.
 
-2. In your ```GBS``` workspace, create a directory called ```output_denovo``` to contain
-the assembled data for this exercise.
+2. To avoid duplicating the raw data for each of us, we will use a link to the source data. This effectively creates a shortcut to another path without copying all the files. 
 
-3. To avoid duplicating the raw data for each of us, we will use a link to the source data. This effectively creates a shortcut to another path without copying all the files. 
-`ln -s /path/you/want/to/link` will create a shortcut to a given path right where you are! The raw data is in 
-```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/oregon_stickleback/``` Using the above example, create a link to this folder right here!
+`ln -s /path/you/want/to/link` will create a shortcut to a given path right where you are! The raw data is in  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/oregon_stickleback/``` Using the above explanation, create a link to this folder right here!
 
-
-4. Run Stacks’ denovo_map.pl pipeline program according to the following set of instructions. Following those instructions you will bit by bit create the complete `denovo_map.pl` command:
+3. Run Stacks’ denovo_map.pl pipeline program according to the following set of instructions. Following these instructions you will bit by bit create the complete `denovo_map.pl` command:
     
-    • Make sure you load the ```Stacks``` module (you can check if you already loaded it using `module list`)
+    • Make sure you load the ```Stacks``` module (you can check if you have already loaded it using `module list`)
     
     • Get back in the ```GBS``` folder if you wandered away.
     
