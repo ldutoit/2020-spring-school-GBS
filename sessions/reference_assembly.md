@@ -28,7 +28,7 @@ create a link to your current directory for this folder (*hint* `ln -s /path/to/
 
 refmap_map.pl has less options since the mapping take care of many of the steps from `denovo_map.pl` such as the creation of loci for each individuals before a comparison of all loci across all individuals. Use the [online help] (https://catchenlab.life.illinois.edu/stacks/comp/ref_map.php) to build your refmap command.
 
-• Like in the previous exercise, ask for 6 threads 
+• Unlike in the previous exercise, ask for 2 threads 
 
 • Specify the path to the output folder `output_refmap/`
 
@@ -44,7 +44,7 @@ refmap_map.pl has less options since the mapping take care of many of the steps 
 
    ```cp denovojob.sh refmapjob.sh```
 
-• Open refmapjob.sh using a text editor. Adjust the running time to `10mn`, the job name to `refmap` and the output log to `refmap.log`. Most importantly, replace the denovo_map.pl command by your `ref_map.pl` command.
+• Open refmapjob.sh using a text editor. Adjust the number of cpus o 2, adjust the running time to `10mn`, the job name to `refmap`,  and the output log to `refmap.log`. Most importantly, replace the denovo_map.pl command by your `ref_map.pl` command.
 
 • Save it, and Run the job:
   
