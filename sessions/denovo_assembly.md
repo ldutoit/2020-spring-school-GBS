@@ -80,7 +80,7 @@ the assembled data for this exercise.
         minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed
         between catalog loci (`n`) **that should be M+2**. Use the values we determined for these parameters in the
         previous exercise, but do not restrict the loci to just those found in 80% like we did in the opt runs.
-        Choose which values of M you want to run, not overlapping with other people parameters and insert them in [The google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M and n(which should be M+2) as well as `-r` anywhere between 50 and 100%.
+        Choose which values of M (M<8) you want to run, not overlapping with other people parameters and insert them in [The google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M and n(which should be M+2) as well as `-r` anywhere between 50 and 100%.
     
     • You must set the stacks directory as the output, and use 6 threads (6 CPUs so your analysis finishes faster than 1!).
         
