@@ -36,27 +36,27 @@ refmap_map.pl has less options since the mapping take care of many of the steps 
 
 • Specify the path to the population map. We will be able to use the same popmap than for the denovo analysis, since we use the same samples. 
 
-• We only want to keep the loci that are found in 80% of individuals. This is done by passing specific arguments to the `populations` software inside Stacks. add the following to your command: `-X "populations: -p 3 -r 0.50"`. Respect the quotes.
+• We only want to keep the loci that are found in 80% of individuals. This is done by passing specific arguments to the `populations` software inside Stacks. The following should be added to your command: `-X "populations:  -r 0.80"`. Make sure you include the quotes.
 
 • Is your command ready? Run it briefly to check that it starts properly, once it does **stop it using ctrl + c**
 
-• Time to put that into a job script. You can use the job script from the last exercise. We will simply make a copy of it under a different name.
+• Time to put that into a job script. You can use the job script from the last exercise. We will simply make a copy of it under a different name. In practice, we often end up reusing our own scripts.
 
    ```cp denovojob.sh refmapjob.sh```
 
-• Open refmapjob.sh using a text editor. Adjust the running time to ... , the job name and the output file to... ... Most importantly, replace the denovo_map.pl command by your ref_map.pl command.
+• Open refmapjob.sh using a text editor. Adjust the running time to `10mn`, the job name to `refmap` and the output log to `refmap.log`. Most importantly, replace the denovo_map.pl command by your `ref_map.pl` command.
 
 • Save it, and Run the job:
   
     ```sbatch refmapjob.sh```
 
-That should take about X minutes. Remember you can use `squeue -u <yourusername>` to check the status of the job.
+That should take about 5 minutes. Remember you can use `squeue -u <yourusername>` to check the status of the job. Once it is not there anymore, it ran.
 
 
 ### Analyse your results.
 
 
-    • Examine the output of the populations program in the file XXXXX.log inside your `output_denovo` folder. (*hint*: use the `less` command).
+    • Examine the output of the populations program in the file ref_map.log inside your `output_refmap` folder. (*hint*: use the `less` command).
     
     • How many SNPs were identified?
 
