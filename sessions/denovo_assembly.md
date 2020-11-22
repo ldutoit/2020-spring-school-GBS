@@ -40,11 +40,11 @@ As a giant research team, we will run the *denovo* pipeline with different param
     
     • Make sure you load the ```Stacks``` module (you can check if you have already loaded it using `module list`)
     
-    • Get back in the ```GBS``` folder if you wandered away.
+    • Get back into the ```GBS``` folder if you wandered away.
     
-    • Information on denovo_map.pl and its parameters can be found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php). You will use this below to build your command.
+    • Information on denovo_map.pl and its parameters can be found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php). You will use this information below to build your command.
     
-    • We want Stacks to understand which individuals in our study belong to which population. Stacks use a so-called population map. The file contains sample names as well as populations. The file should be formatted in 2 columns like [this](http://catchenlab.life.illinois.edu/stacks/manual/#popmap). All 30 samples are at the file path below. Copy it in the folder `GBS you` should currently be in. Note that all the samples refer to a single population to be able to apply easily the `--min-samples-per-pop` filtering below. 
+    • We want Stacks to understand which individuals in our study belong to which population. Stacks uses a so-called population map. The file contains sample names as well as populations. The file should be formatted in 2 columns like [this](http://catchenlab.life.illinois.edu/stacks/manual/#popmap). All 30 samples are at the file path below. Copy it into the `GBS` folder you should currently be in. Note that all the samples refer to a single population to be able to apply easily the `--min-samples-per-pop` filtering below. 
     
     ```/nesi/project/nesi02659/obss_2020/resources/day3/popmap.txt```
 
