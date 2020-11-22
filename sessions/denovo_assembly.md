@@ -52,16 +52,15 @@ As a giant research team, we will run the *denovo* pipeline with different param
     
     • There are three important parameters that must be specified to denovo_map.pl, the minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed between catalog loci (`n`) **that should be set to M+2**. Choose which values of M (M < 8) you want to run, not overlapping with parameters other people have already chosen, and insert them into [this google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M (between 1 and 8) and n (which should be M + 2) as well as `-r/--min-samples-per-pop` anywhere between 0.50 and 1.
     
-    • You must set the stacks directory as the output, and use 6 threads (6 CPUs so your analysis finishes faster than 1!).
+    • You must set the `output_denovo` directory as the output, and use 6 threads (6 CPUs: so your analysis finishes faster than 1!).
         
-    • Specify the path to the directory containing your sample files (*hint* use your *oregon_stickleback/* link here!).       The denovo_map.pl program will read the sample names out of the population map, and
-        look for them in the samples directory you specify.
+    • Specify the path to the directory containing your sample files (*hint* use your *oregon_stickleback/* link here!). The denovo_map.pl program will read the sample names out of the population map, and look for them in the samples directory you specify.
        
     • Your command should be ready, try to execute the Stacks pipeline. 
 
     • Is it starting alright?  Good, now  **Use `control + c` to stop your command**
 
-5. Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run pur command directly. On a day to day basis, you would be evolving on the login node (i.e. The place you reach when you login). All the resources are tucked away from the login node. You generally run your commands as jobs that are sent to this resources, not on the login node itself. We will use this denovo_map.pl command as a perfect example to run our first job.
+5. Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run our commands directly. On a day to day basis, you would be logging in on the login node (i.e. the place you reach when you login) and running jobs using a "submission script". The submission script (or sbatch script) accesses all the computing resources that are tucked away from the login node. This allows your commands to be run as jobs that are sent out to computing resources, rather than having to run jobs on the login node itself (which can slow down people logging in/transferring files if the login node is busy running peoples' jobs!). We will use this denovo_map.pl command as a perfect example to run our first job using an sbatch script.
 
   • copy an example jobfile into this directory. The example is at :                  ```/nesi/project/nesi02659/obss_2020/resources/day3/denovojob.sh```
 
