@@ -57,12 +57,9 @@ derived.
 
         ./dataprep/samples:
     
-    • Copy the dataset containing the raw reads  to your ```lane1``` directory. The dataset is the file
-       `/nesi/project/nesi02659/obss_2020/resources/day3/lane1.tar` 
-       (*hint*: `cp /path/to/what/you/want/to/copy /destination/you/want/it/to/go`)          
+    • Copy the dataset containing the raw reads  to your ```lane1``` directory. The dataset is the file `/nesi/project/nesi02659/obss_2020/resources/day3/lane1.tar` (*hint*: `cp /path/to/what/you/want/to/copy /destination/you/want/it/to/go`)          
     
-    • `cd`  to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive file. This is a compressed (aka 'zip') folder. We realise that we have not told you how to do extract/unzip tar files! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).    
-    *hint* : you might try searching for "How to extract a tar archive"
+    • `cd`  to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive file. This is a compressed (aka 'zip') folder. We realise that we have not told you how to do extract/unzip tar files! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!). *hint* : you might try searching for "How to extract a tar archive"
 
 3. Have a look at what is there now (*hint*: `ls`). These gz-compressed fastq files have milions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal (the ```less``` command may be of use).
     
