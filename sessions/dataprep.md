@@ -27,20 +27,19 @@ derived.
     
     • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
     
-       cd /nesi/project/nesi02659/obss_2020/users/<yourusername>/
+       `cd /nesi/project/nesi02659/obss_2020/users/<yourusername>/`
        
-OR from the launch of the Jupyter terminal:
+   OR from the launch of the Jupyter terminal:
      
-       cd obss_2020/users/<yourusername>/
+       `cd obss_2020/users/<yourusername>/`
        
-*NOTE*: If you get lost an any time today, you can always `cd` to your directory following the upper link.
+   *NOTE*: If you get lost an any time today, you can always `cd` to your directory following the upper link.
        
    • Once there, create the directory `GBS` and then change directory into `GBS`:
      
         mkdir GBS
         cd GBS
-        
-        
+               
 The exercise from now on is hands-on: the instructions are here to guide you through the process but you will have to come up with the specific commands yourself. Fear not, the instructions are there to help you and the room is full of friendly faces to help you get through it. 
       
 2. We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
