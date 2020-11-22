@@ -76,7 +76,7 @@ derived.
 
      Explanations of this code: `module purge` get rids of any pre-existing potentially conflicting modules. `module spider` searches for modules e.g. `module spider fastqc`  looks for a module called fastqc (or something similar!). Once we know what this module is actually called (*note*: almost everything we do on terminal is case-sensitive) we can use `module load` to load the module. Finally, we ran `fastqc` using the wildcard `*` to select all the *gz* files at once.
 
-   •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool in the red square in the top left to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`). You can then double click on a fastqc html report. 
+   •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool in the red square in the top left to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`. Also, if `obss_2020` doesn't show up in the menu on the left, you might need to also click the littler folder icon just above `Name`). You can then double click on a fastqc html report. 
    
    <p align="center"><br><img src="img/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p></p>
 
