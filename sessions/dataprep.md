@@ -23,7 +23,6 @@ derived.
 1. Let's organise our space, get comfortable moving around, and copy our data :
     
     • Log into Jupyter at [https://jupyter.nesi.org.nz/hub/login](https://jupyter.nesi.org.nz/hub/login). Not sure how to do it? Just follow the instructions [jupyter_hub.md](jupyter_hub.md)
-       
     
     • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
     
@@ -33,7 +32,7 @@ derived.
      
        cd obss_2020/users/<yourusername>/
        
-   *NOTE*: If you get lost an any time today, you can always `cd` to your directory following the upper link.
+   *NOTE*: If you get lost at any time today, you can always `cd` to your directory following the upper link.
        
    • Once there, create the directory `GBS` and then change directory into `GBS`:
      
