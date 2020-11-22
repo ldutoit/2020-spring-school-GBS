@@ -76,20 +76,15 @@ derived.
 
      Explanations of this code: `module purge` get rids of any pre-existing potentially conflicting modules. `module spider` searches for modules e.g. `module spider fastqc`  looks for a module called fastqc (or something similar!). Once we know what this module is actually called (*note*: almost everything we do on terminal is case-sensitive) we can use `module load` to load the module. Finally, we ran `fastqc` using the wildcard `*` to select all the *gz* files at once.
 
-   •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool (click on the red square in the top left) to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd` in your terminal window. Also, if `obss_2020` doesn't show up in the menu on the left, you might need to also click the littler folder icon just above `Name`). Once you've navigated to the correct window, you can then double click on a fastqc html report. 
+   •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool (click on the red square in the top left) to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd` in your terminal window. Also, if `obss_2020` doesn't show up in the menu on the left, you might need to also click the littler folder icon just above `Name`). Once you've navigated to the correct folder, you can then double click on a fastqc html report. 
    
    <p align="center"><br><img src="img/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p></p>
 
 5. Let's look at this FastQC report together:
 
-   • What is this weird thing in the base-pair content from base 7 to 12-13?
+   • What is this weird thing in the per base sequence content from base 7 to 12-13?
 
-   • You probably noticed that not all of the data is high quality. In general, you will want
-      to remove the lowest quality sequences from your data set before you proceed.
-      However, the stringency of the filtering will depend on the final application. In
-      general, higher stringency is needed for *de novo* assemblies as compared to
-      alignments to a reference genome. However, low quality data can
-      affect downstream analysis for *de novo* and reference-based approaches, producing false positives, such as errant SNP predictions.
+   • You probably noticed that not all of the data is high quality (especially if you check the 'Per base sequence quality' tab!). In general with next generation sequencing, you want to remove the lowest quality sequences from your data set before you proceed. However, the stringency of the filtering will depend on the final application. In general, higher stringency is needed for *de novo* assemblies as compared to alignments to a reference genome. However, low quality data can affect downstream analysis for both *de novo* and reference-based approaches, producing false positives, such as errant SNP predictions.
 
 5. We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
 process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. 
