@@ -69,7 +69,6 @@ derived.
     
 4. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on these files. Load the module first and then run FastQC over all the gzipped file. We will help you out with these commands: 
 
-        module
         module spider fastqc 
         module load FastQC
         fastqc *gz
