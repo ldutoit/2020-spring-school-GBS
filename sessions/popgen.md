@@ -87,6 +87,6 @@ Congrats, you just finished our tutorial for denovo RAD-Seq. Are you already don
 
 • You could try running this set of analyses on a denovo dataset. You can use the one you generated yourself or a -M 2 dataset that is in `/nesi/project/nesi02659/obss_2020/resources/day3/output_denovo_M2`.
 
-• You could have a look at this [tutorial](https://github.com/ldutoit/bully_gbs/blob/master/populationstructure_tuto/populationstructure_tuto.md). It is a small tutorial I wrote once that go over a different set of population genetics analyses in R. You could even try reproducing it using the vcf you generated above.
+• You could have a look at this [tutorial](populationstructure_tuto/populationstructure_tuto.md). It is a small tutorial I wrote once that go over a different set of population genetics analyses in R. You could even try reproducing it using the vcf you generated above.
 
 
