@@ -11,26 +11,9 @@
 
 ### Introduction
 
-In this second exercise we will be working on threespine stickleback data sampled from throughout Oregon, on the west coast of the United States. These data consist of 30 samples in three populations: a coastal marine population, a coastal freshwater, and an inland river population. These sticklebacks can be found in a
-number of habitats from costal
-marine and freshwater habitats, to
-inland river habitats, to high
-mountain lakes in the interior of
-Oregon. We want to understand how
-these populations relate to one
-another and in this exercise, you will
-examine three of these populations:
-a coastal marine population, a coastal
-freshwater, and an inland river
-population. For more information on
-the background of this study, see [Catchen et al, 2013](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330).
+In this second exercise we will be working on threespine stickleback data sampled from throughout Oregon, on the West Coast of the United States. These data consist of 30 samples in three populations: a coastal marine population, a coastal freshwater, and an inland river population. These sticklebacks can be found in a number of habitats from costal marine and freshwater habitats, to inland river habitats, to high mountain lakes in the interior of Oregon. We want to understand how these populations relate to one another and in this exercise, you will examine three of these populations: a coastal marine population, a coastal freshwater, and an inland river population. For more information on the background of this study, see [Catchen et al, 2013](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330).
 
-Without access to a reference genome, we
-want to assemble the RAD loci and
-examine population structure. However, before we can do that, we want to explore
-the *de novo* parameter space for the in order to be confident that we are assembling our data
-in an optimal way. Stack (i.e. locus) formation is controlled by three main
-parameters: 
+Without access to a reference genome, we want to assemble the RAD loci and examine population structure. However, before we can do that, we want to explore the *de novo* parameter space in order to be confident that we are assembling our data in an optimal way. Stack (i.e. locus) formation is controlled by three main parameters: 
 
 -m :  the minimum amount of reads to create a locus)
 
@@ -40,12 +23,7 @@ parameters:
 
 If that does not make sense or you would like to know more, have a quick read of [this explanation from the manual](http://catchenlab.life.illinois.edu/stacks/param_tut.php).
 
-Here, we will optimize the parameter M using the collaborative power of our wonderful team. After
-We will be using the guidelines of parameter optimization as outlined in [Paris
-et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess which parameters value for M recovers the highest number of new polymorphic loci.
-
-This approach is described more in [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775)
-
+Here, we will optimize the parameter M (description in bold above) using the collaborative power of all of us here today! We will be using the guidelines of parameter optimization as outlined in [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess value for the M parameter that recovers the highest number of polymorphic loci. [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) provides a description of this approach:
 *"After putative alleles are formed, stacks performs a search to match alleles together into putative loci. This search is governed by the M parameter, which controls for the maximum number of mismatches allowed between putative alleles [...] Correctly setting **M** requires a balance – set it too low and alleles from the same locus will not collapse, set it too high and paralogous or repetitive loci will incorrectly merge together."*
 
 As a giant research team,  we will run the *denovo* pipeline with different parameters. The results from the different parameters will be shared using [The Google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). We'll be able to use the best dataset downstream for population genetics analyses and comparison with a pipeline that utilises a reference genome.
