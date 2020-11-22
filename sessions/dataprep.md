@@ -20,7 +20,7 @@ samples that were individually barcoded. This **‘de-multiplexing’** serves t
 reads with the different individuals or population samples from which they were
 derived.
 
-1. Let's organise our space, get comfortable moving around and copy our data :
+1. Let's organise our space, get comfortable moving around, and copy our data :
     
     • Log into Jupyter at [https://jupyter.nesi.org.nz/hub/login](https://jupyter.nesi.org.nz/hub/login). Not sure how to do it? Just follow the instructions [jupyter_hub.md](jupyter_hub.md)
        
