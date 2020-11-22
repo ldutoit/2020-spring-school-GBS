@@ -105,4 +105,4 @@ As a giant research team, we will run the *denovo* pipeline with different param
         populations? [HINT: The less -S command may help you view these files easily by avoiding the wrapping]
 
 
-Congratulations, you obtained variants.
+Congratulations, you obtained variants :)
