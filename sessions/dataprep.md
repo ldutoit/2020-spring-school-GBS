@@ -33,7 +33,7 @@ OR from the launch of the Jupyter terminal:
      
        cd obss_2020/users/<yourusername>/
        
-*NOTE*: If you get lost an any time today, you can always cd in your home following this upper link.
+*NOTE*: If you get lost an any time today, you can always `cd` to your directory following the upper link.
        
    • Once there, create the directory `GBS` and then change directory into `GBS`:
      
