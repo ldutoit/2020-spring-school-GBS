@@ -27,11 +27,11 @@ derived.
     
     • For each exercise, you will set up a directory structure on the remote server that will hold your data and the different steps of your analysis. We will start by making the directory ```GBS``` in your working space, so let's `cd` (change directory) to your working location:
     
-       `cd /nesi/project/nesi02659/obss_2020/users/<yourusername>/`
+       cd /nesi/project/nesi02659/obss_2020/users/<yourusername>/
        
    OR from the launch of the Jupyter terminal:
      
-       `cd obss_2020/users/<yourusername>/`
+       cd obss_2020/users/<yourusername>/
        
    *NOTE*: If you get lost an any time today, you can always `cd` to your directory following the upper link.
        
