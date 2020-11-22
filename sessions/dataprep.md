@@ -103,8 +103,7 @@ derived.
     • Have a look at the [help online](https://catchenlab.life.illinois.edu/stacks/comp/process_radtags.php) to prepare your `process_radtags` command.  You will need to specify:
    - the restriction enzyme used to construct the library (SbfI)
    - the directory of input files (the ```lane1``` directory)
-   - the list of barcodes, the output directory
-        (```samples```)
+   - the list of barcodes (```lane1_barcodes.txt```), the output directory (```samples```)
    - the fact that the input files are gzipped
    - Finally,  specify that process_radtags needs  ```clean, discard, and rescue reads``` as options of `process_radtags`
         
