@@ -97,18 +97,18 @@ derived.
         
     • Based on the barcode file, can you check how many samples were multiplexed together in this RAD library? (*hint:* you can count the lines in the file using `wc -l lane1_barcodes.txt`)
         
-     • Have a look at the [help online](https://catchenlab.life.illinois.edu/stacks/comp/process_radtags.php) to prepare your `process_radtags` command.  You will need to specify:
+    • Have a look at the [help online](https://catchenlab.life.illinois.edu/stacks/comp/process_radtags.php) to prepare your `process_radtags` command.  You will need to specify:
    - the restriction enzyme used to construct the library (SbfI)
    - the directory of input files (the ```lane1``` directory)
    - the list of barcodes (```lane1_barcodes.txt```), the output directory (```samples```)
    - the fact that the input files are gzipped
-   - Finally,  specify that process_radtags needs  ```clean, discard, and rescue reads``` as options of `process_radtags`
+   - finally,  specify that process_radtags needs  ```clean, discard, and rescue reads``` as options of `process_radtags`
         
-     • You should now be able to run the ```process_radtags``` command from the ```dataprep``` directory using these options. It will take a couple of minutes to run. Take a breath or think about what commands we've run through so far.
+    • You should now be able to run the ```process_radtags``` command from the ```dataprep``` directory using these options. It will take a couple of minutes to run. Take a breath or think about what commands we've run through so far.
    
-     • The process_radtags program will write a log file into the output directory. Have a look in there. Examine the log and answer the following questions:
-  -   How many reads were retained?
-  -   Of those discarded, what were the reasons?     
-  -   In the process_radtags log file, what can the list of “sequences not recorded” tell you about the barcodes analysed and about the sequencing quality in general?
+    • The process_radtags program will write a log file into the output directory. Have a look in there. Examine the log and answer the following questions:
+    - How many reads were retained?
+    - Of those discarded, what were the reasons?     
+    - In the process_radtags log file, what can the list of “sequences not recorded” tell you about the barcodes analysed and about the sequencing quality in general?
 
 Well done! Take a breath, sit back or help your neighbour, we will be back shortly!
