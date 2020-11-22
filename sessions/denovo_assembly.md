@@ -108,14 +108,14 @@ the assembled data for this exercise.
 
     squeue -u <yourusername>
  
- • We used a few basic options of sbatch, time, memory and ... . In reality, there are many many more options, have a quick look at sbatch --help out of interest. NeSI also has its own handy guide on how to submit a job [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job).
+ • We used a few basic options of sbatch, time, memory, job names and output log file. In reality, there are many many more options, have a quick look at sbatch --help out of interest. NeSI also has its own handy guide on how to submit a job [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job).
 
 • Once `squeue` is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 30mn to run, so in the meantime, sit back and relax, we are getting to lunch!
 
 
 ### Analysing the data from our collaborative optimisation
 
-5. Examine the Stacks log and output files when execution is complete. It should be in `output_denovo`
+5. Examine the Stacks log and output files when execution is complete. You should find all this info in `denovo.log`
     
     • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl   will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of  each sample. Find this table in the log, what were the depths of coverage? 
     
@@ -129,7 +129,7 @@ the assembled data for this exercise.
     
     • How many were filtered and for what reasons?
     
-    • Familiarize yourself with the population genetics statistics produced by the populations component of stacks populations.sumstats_summary.tsv
+    • Familiarize yourself with the population genetics statistics produced by the populations component of stacks populations.sumstats_summary.tsv inside the output_denovo
     
     • What is the mean value of nucleotide diversity (π) and FIS for each of the three
         populations? [HINT: The less -S command may help you view these files easily by avoiding the wrapping]
