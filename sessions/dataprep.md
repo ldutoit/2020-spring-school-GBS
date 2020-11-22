@@ -48,16 +48,15 @@ derived.
     
    • As a check that we've set up our workspace correctly, go back to your ```GBS``` directory (*hint*: `cd ..` goes up **one** level) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
     
-    GBS/:
-    dataprep
+        GBS/:
+        dataprep
 
-    GBS/dataprep:
-    lane1  samples
+        GBS/dataprep:
+        lane1  samples
 
-    GBS/dataprep/lane1:
+        GBS/dataprep/lane1:
 
-    GBS/dataprep/samples:
-    
+        GBS/dataprep/samples:
     
     • Copy the data set 1 containing the raw reads  to your ```lane1``` directory. The data set is in the file
        `/nesi/project/nesi02659/obss_2020/resources/day3/lane1.tar` 
