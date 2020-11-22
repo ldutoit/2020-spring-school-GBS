@@ -72,14 +72,14 @@ derived.
 4. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on these files. load the module first and then run FastQC over all the gzipped file. We will help you on that one: 
 
 
-```
-module
-module spider fastqc 
-module load FastQC
-fastqc *gz
-```
+ ```
+ module
+ module spider fastqc 
+ module load FastQC
+ fastqc *gz
+ ```
 
-4. `module purge` get rids of any pre-existing potentially conflicting modules. 2. `module spider` simply search for a module called FastQC. 3.Once we found this module we can use `module load` to load the module. 4. Finally, we run `fastqc`  using of the wildcard `*` to select all *gz* files at once:
+5. `module purge` get rids of any pre-existing potentially conflicting modules. 2. `module spider` simply search for a module called FastQC. 3.Once we found this module we can use `module load` to load the module. 4. Finally, we run `fastqc`  using of the wildcard `*` to select all *gz* files at once:
 
 
    •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`). You can then double click on a fastqc html report. 
