@@ -45,7 +45,7 @@ derived.
     
    • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. **Inside** that directory ``dataprep`` we will create two additional directories: ```lane1``` and ```samples```. 
     
-   • As a check that we've set up our workspace correctly, go back to your ```GBS``` directory (*hint*: `cd ..` goes up **one** level) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following:
+   • As a check that we've set up our workspace correctly, go back to your ```GBS``` directory (*hint*: `cd ..` goes up **one** level) and use the `ls -R` (the `ls` command with the recursive flag). It should show you the following (`./` is a placeholder for 'current directory'):
     
         .:
         dataprep
