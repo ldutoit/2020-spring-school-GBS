@@ -84,7 +84,7 @@ derived.
 
 6. We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information and examples. 
     
-    • Get back into your ```dataprep``` folder by running ```cd ../``` in the terminal. (*hint*: if you are lost use `pwd` to check where you are.
+    • Get back into your ```dataprep``` folder by running ```cd ../``` in the terminal (*hint*: if you are lost use `pwd` to check where you are).
     
     • It is time to load the ```Stacks``` module to be able to access the ```process_radtags``` command. Find the module  and load it (*hint* Do for Stacks what we did above for FastQC).
 
