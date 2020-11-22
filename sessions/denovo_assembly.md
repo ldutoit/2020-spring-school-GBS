@@ -11,7 +11,7 @@
 
 ### Introduction
 
-In this second exercise we will  be working on  threespine stickleback data sampled from throughout Oregon, on the west coast of the United States. These data consist of 30 samples in three populations: a coastal marine population, a coastal freshwater, and an inland river population. These stickleback can be found in a
+In this second exercise we will be working on threespine stickleback data sampled from throughout Oregon, on the west coast of the United States. These data consist of 30 samples in three populations: a coastal marine population, a coastal freshwater, and an inland river population. These sticklebacks can be found in a
 number of habitats from costal
 marine and freshwater habitats, to
 inland river habitats, to high
@@ -20,7 +20,7 @@ Oregon. We want to understand how
 these populations relate to one
 another and in this exercise, you will
 examine three of these populations:
-a coastal marine population, a costal
+a coastal marine population, a coastal
 freshwater, and an inland river
 population. For more information on
 the background of this study, see [Catchen et al, 2013](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330).
@@ -42,7 +42,7 @@ If that does not make sense or you would like to know more, have a quick read of
 
 Here, we will optimize the parameter M using the collaborative power of our wonderful team. After
 We will be using the guidelines of parameter optimization as outlined in [Paris
-et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess which parameters value for M recovers the highest number of new polymorphic loci found across 80% of the individuals (r80 loci).
+et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775) to assess which parameters value for M recovers the highest number of new polymorphic loci.
 
 This approach is described more in [Paris et al. (2017)](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.12775)
 
@@ -70,30 +70,28 @@ the assembled data for this exercise.
     
     • Information on denovo_map.pl and its parameters can be found [online](http://catchenlab.life.illinois.edu/stacks/comp/denovo_map.php). You will use this below to build your command.
     
-    • We want Stacks to understand which individuals in our study belong to which population. Stacks use a so-called population map. The file contains sample names as well as populations. The file should be formatted in 2 columns like [this](http://catchenlab.life.illinois.edu/stacks/manual/#popmap). All 30 samples are at the file path below. Copy it in the folder `GBS you` should currently be in.
+    • We want Stacks to understand which individuals in our study belong to which population. Stacks use a so-called population map. The file contains sample names as well as populations. The file should be formatted in 2 columns like [this](http://catchenlab.life.illinois.edu/stacks/manual/#popmap). All 30 samples are at the file path below. Copy it in the folder `GBS you` should currently be in. Note that all the samples refer to a single population to be able to apply easily the `--min-samples-per-pop` filtering below. 
     
-    ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/denovo_popmap.txt```
+    ```/nesi/project/nesi02659/obss_2020/resources/day3/denovo_popmap.txt```
 
     • Make sure you specify this population map to the denovo_map.pl command.
     
     • There are three important parameters that must be specified to denovo_map.pl, the
         minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed
-        between catalog loci (`n`) **that should be M+2**. Use the values we determined for these parameters in the
-        previous exercise, but do not restrict the loci to just those found in 80% like we did in the opt runs.
-        Choose which values of M (M<8) you want to run, not overlapping with other people parameters and insert them in [The google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M and n(which should be M+2) as well as `-r` anywhere between 50 and 100%.
+        between catalog loci (`n`) **that should be M+2**. Choose which values of M (M<8) you want to run, not overlapping with other people parameters and insert them in [The google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M and n(which should be M+2) as well as `-r/--min-samples-per-pop` anywhere between 0.50 and 1.
     
     • You must set the stacks directory as the output, and use 6 threads (6 CPUs so your analysis finishes faster than 1!).
         
-    • Specify the path to the directory containing your sample files (*hint* use your *oregon_stickleback/* link here!.       The denovo_map.pl program will read the sample names out of the population map, and
+    • Specify the path to the directory containing your sample files (*hint* use your *oregon_stickleback/* link here!).       The denovo_map.pl program will read the sample names out of the population map, and
         look for them in the samples directory you specify.
        
     • Your command should be ready, try to execute the Stacks pipeline. 
 
     • Is it starting alright?  Good, now  **Use `control + c` to stop your command**
 
-5.Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run pur command directly. On a day to day basis, you would be evolving on the login node (i.e. The place you reach when you login). All the resources are tucked away from the login node. You generally run your commands as jobs that are sent to this resources, not on the login node itself. We will use this denovo_map.pl command as a perfect example to run our first job.
+5. Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run pur command directly. On a day to day basis, you would be evolving on the login node (i.e. The place you reach when you login). All the resources are tucked away from the login node. You generally run your commands as jobs that are sent to this resources, not on the login node itself. We will use this denovo_map.pl command as a perfect example to run our first job.
 
-  • copy an example jobfile into this directory. The example is at :                  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/denovojob.sh```
+  • copy an example jobfile into this directory. The example is at :                  ```/nesi/project/nesi02659/obss_2020/resources/day3/denovojob.sh```
 
   • Open it with a text editor, have a look at what is there. The first bit are parameters for the job that starts with . system informing on who you are, which type of resources you need and for how long.
 
@@ -110,7 +108,7 @@ the assembled data for this exercise.
  
  • We used a few basic options of sbatch, time, memory, job names and output log file. In reality, there are many many more options, have a quick look at sbatch --help out of interest. NeSI also has its own handy guide on how to submit a job [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job).
 
-• Once `squeue` is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 30mn to run, so in the meantime, sit back and relax, we are getting to lunch!
+• Once `squeue` is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 1h to run, so in the meantime, sit back and relax, we'll get back to this after lunch!
 
 
 ### Analysing the data from our collaborative optimisation
@@ -119,7 +117,7 @@ the assembled data for this exercise.
     
     • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl   will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of  each sample. Find this table in the log, what were the depths of coverage? 
     
-    • Examine the output of the populations program in the file XXXXX.log inside your `output_denovo` folder. (*hint*: use the `less` command).
+    • Examine the output of the populations program in the file denovo.log inside your `output_denovo` folder. (*hint*: use the `less` command).
     
     • How many loci were identified?
 
