@@ -69,12 +69,12 @@ derived.
     
 4. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on these files. Load the module first and then run FastQC over all the gzipped file. We will help you out with these commands: 
 
+        module # What do the commands 'module spider', ' module load', 'module purge' do?
         module spider fastqc 
         module load FastQC
         fastqc *gz
 
-5. `module purge` get rids of any pre-existing potentially conflicting modules. 2. `module spider` simply search for a module called FastQC. 3.Once we found this module we can use `module load` to load the module. 4. Finally, we run `fastqc`  using of the wildcard `*` to select all *gz* files at once:
-
+(a) `module purge` get rids of any pre-existing potentially conflicting modules; (b) `module spider` searches for modules e.g. `module spider fastqc`  looks for a module called fastqc (or something similar!). (c) Once we know what this module is actually called (*note* almost everything we do on terminal is case-sensitive) we can use `module load` to load the module; (d) Finally, we run `fastqc` using the wildcard `*` to select all the *gz* files at once.
 
    •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`). You can then double click on a fastqc html report. 
    
@@ -82,7 +82,7 @@ derived.
    
    
 
-Let's look at this FastQC report together:
+5. Let's look at this FastQC report together:
 
    • What is this weird thing in the base-pair content from base 7 to 12-13?
 
