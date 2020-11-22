@@ -86,7 +86,7 @@ derived.
     
     • Get back into your ```dataprep``` folder by running ```cd ../``` in the terminal (*hint*: if you are lost use `pwd` to check where you are).
     
-    • It is time to load the ```Stacks``` module to be able to access the ```process_radtags``` command. Find the module  and load it (*hint* Do for Stacks what we did above for FastQC).
+    • It is time to load the ```Stacks``` module to be able to access the ```process_radtags``` command. Find the module  and load it (*hint*: Do for Stacks what we did above for FastQC).
 
   
     • You will need to specify the set of barcodes used in the construction of the RAD library. Remember, each P1 adaptor in RAD has a particular DNA sequence (an inline barcode) that gets sequenced first, allowing data to be associated with individual samples.
