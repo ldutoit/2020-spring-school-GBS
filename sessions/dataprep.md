@@ -67,9 +67,9 @@ derived.
 
 3. Have a look at what is there now (*hint*: `ls`). These gz-compressed fastq files have milions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal (the ```less``` command may be of use).
     
-4. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on these files. Load the module first and then run FastQC over all the gzipped file. We will help you out with these commands: 
+4. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on these files. Load the module first and then run FastQC over all the gzipped file. We will help you out with these commands, but bonus question as you work through these: What do the commands 'module spider', ' module load', 'module purge' do? 
 
-        module # What do the commands 'module spider', ' module load', 'module purge' do?
+        module
         module spider fastqc 
         module load FastQC
         fastqc *gz
