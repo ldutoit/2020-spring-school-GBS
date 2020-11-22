@@ -34,7 +34,7 @@ As a giant research team, we will run the *denovo* pipeline with different param
 
 2. To avoid duplicating the raw data for each of us, we will use a link to the source data. This effectively creates a shortcut to another path without copying all the files. 
 
-  `ln -s /path/you/want/to/link` will create a shortcut to a given path right where you are! The raw data is in  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/oregon_stickleback/``` Using the above explanation, create a link to this folder right here!
+    `ln -s /path/you/want/to/link` will create a shortcut to a given path right where you are! The raw data is in  ```/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day3/oregon_stickleback/``` Using the above explanation, create a link to this folder right here!
 
 3. Run Stacks’ denovo_map.pl pipeline program according to the following set of instructions. Following these instructions you will bit by bit create the complete `denovo_map.pl` command:
     
