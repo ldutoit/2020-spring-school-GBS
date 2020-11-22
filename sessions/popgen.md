@@ -54,10 +54,12 @@ You got this! If you are new to bash, I am sure that seemed impossible on monday
 
 Now we will execute `populations` again, this time feeding back in the whitelist you just generated, check out the help of populations to see how to use a white list. This will cause populations to only process the loci in the `whitelist.txt`. 
 
-• The [help of populations](https://catchenlab.life.illinois.edu/stacks/comp/populations.php) will tell you how to pass a white list.
+• The [help of Populations](https://catchenlab.life.illinois.edu/stacks/comp/populations.php) will tell you how to pass a white list.
 
-• Specify that a Structure output file be included this time a 
+• Specify that a Structure output file be included this time.
  
+• Specify `--write-single-snp` that should generate one snp per locus as we need genetically unlinked SNPs (i.e. statistically)
+
 • Finally, you will need to again specify the population map so that this information is passed into the Structure output file. **Careful** This time we will specify the population map with the proper population information. That file is at `/nesi/project/nesi02659/obss_2020/resources/day3/complete_popmap.txt`. You can copy this file here, link it, or simply specify the full path, your call! Al of these 3 solutions should work.
 
 • We've run commands to generate the structure file two times now, but how many structure files are there in the stacks directory? If you wanted to save several different vcf and structure files generated using different populations options, what would you have to do?
@@ -66,15 +68,16 @@ Create a new directory called structure within the `GBS` folder and copy the Str
 
 • Edit the Structure output file to remove the comment line (i.e. first line in the file, starts with “#”).
 
-• The parameters to run Structure (with value of K=3) have already been prepared, you can find them here: `/nesi/project/nesi02659/obss_2020/resources/day3//mainparams` and `/nesi/project/nesi02659/obss_2020/resources/day3/extraparams`. Copy them into your structure directory as well.
+• The parameters to run Structure (with value of K=3) have already been prepared, you can find them here: `/nesi/project/nesi02659/obss_2020/resources/day3/mainparams` and `/nesi/project/nesi02659/obss_2020/resources/day3/extraparams`. Copy them into your structure directory as well.
 
-So far, when we've gone to run programs, we've been able to use module spider to figure out the program name, and then module load program_name to get access to the program and run it. However, structure is not an available module on Mahuika. Instead, we've done a local installation of the progam into /nesi/nobackup/nesi02659/source_data/structure. Run Structure:
+• So far, when we've gone to run programs, we've been able to use `module spider` to figure out the program name, and then module load program_name to get access to the program and run it. Do it one more time for `structure`
 
- ```/nesi/nobackup/nesi02659/source_data/structure.py```
+•  run structure by simply typing `structure` !!!! THIS DOES NOT RUN
+
  
-The program should give you some information as it runs. If the program immediately finishes, something has gone wrong! Do a less on populations.structure.console. Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your stacks directory, how many variant sites remained after filtering? This is the number of loci actually contained in your structure file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
+Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your stacks directory, how many variant sites remained after filtering? This is the number of loci actually contained in your structure file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
 
-You will need to download Structure with the graphical front end and use scp to download the populations.structure.out_f file from the cluster. You can then load this file into the graphical interface for Structure on your local computer. Select the File menu and then Load structure results to load the Structure output. Choose the Barplot menu and then Show.
+!!!You will need to download Structure with the graphical front end and use scp to download the populations.structure.out_f file from the cluster. You can then load this file into the graphical interface for Structure on your local computer. Select the File menu and then Load structure results to load the Structure output. Choose the Barplot menu and then Show.
 
 • Are the three Oregon threespine stickleback populations related to one another? How can you tell?
 
@@ -82,8 +85,8 @@ Congrats, you just finished our tutorial for denovo RAD-Seq. Are you already don
 
 • You could spend a bit of time going through what you have done today and make sure you understand the set of steps we did in those few exercises.
 
-• You could try running this set of analyses on a denovo dataset. Ylou can use the one you generated yourself or a -M 2 dataset that is in !!!.
+• You could try running this set of analyses on a denovo dataset. You can use the one you generated yourself or a -M 2 dataset that is in `/nesi/project/nesi02659/obss_2020/resources/day3/output_denovo_M2`.
 
-• You could have a look at. ... It is a small tutorial I wrote once that go over a different set of population genetics analyses in R. You could even try reproducing it using the VCF you generated above.
+• You could have a look at this [tutorial](https://github.com/ldutoit/bully_gbs/blob/master/populationstructure_tuto/populationstructure_tuto.md). It is a small tutorial I wrote once that go over a different set of population genetics analyses in R. You could even try reproducing it using the vcf you generated above.
 
 
