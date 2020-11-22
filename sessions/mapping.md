@@ -38,6 +38,6 @@ The loop below run the alignment for each file. It should be run in a job file.
   done	
 ```
 
-Those BAM files are now ready to be processed by ref_map.pl!!
+Those BAM files are now ready to be processed by ref_map.pl!
 
 
