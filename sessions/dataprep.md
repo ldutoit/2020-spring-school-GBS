@@ -43,7 +43,7 @@ OR from the launch of the Jupyter terminal:
         
 The exercise from now on is hands-on: the instructions are here to guide you through the process but you will have to come up with the specific commands yourself. Fear not, the instructions are there to help you and the room is full of friendly faces to help you get through it. 
       
-1. We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
+2. We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
     
   • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. **Inside** that directory ``dataprep`` we will create two additional directories: ```lane1``` and ```samples```. 
     
@@ -67,10 +67,10 @@ The exercise from now on is hands-on: the instructions are here to guide you thr
    • `cd`  to your ```lane1``` folder to extract/unzip the content of this ```tar``` archive. this is a compressed folder. We realise that we have not told you how to do so! But a quick look to a friendly search engine will show you how easy it is to find this kind of information on basic bash commands (your instructors *still* spend a lot of time doing this themselves!).    
     *hint* : you might try searching for "How to extract a tar archive"
 
-2. Have a look at what is there now. These gz-compressed fastq files have milions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
+3. Have a look at what is there now. These gz-compressed fastq files have milions of reads in them, too many for you to examine in a spreadsheet or word processor. However, we can examine the contents of the set of files in the terminal
 (the ```less``` command may be of use).
     
-3. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on  these files. load the module first and then run FastQC over all the gzipped file. We will help you on that one: 
+4. Let's have a closer look at this data. Over the last couple of days, you learnt to run FastQC to evaluate the quality of the data. Run it on these files. load the module first and then run FastQC over all the gzipped file. We will help you on that one: 
 
 
 ```
@@ -100,7 +100,7 @@ Let's look at this FastQC report together:
       alignments to a reference genome. However, low quality data can
       affect downstream analysis for *de novo* and reference-based approaches, producing false positives, such as errant SNP predictions.
 
-4.We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
+5. We will use the Stacks’s program **process_radtags** to remove low quality sequences (also known as cleaning data) and to demultiplex our samples. [Here is the Stacks manual](http://catchenlab.life.illinois.edu/stacks/manual/) as well as the specific [manual page for
 process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on the Stacks website to find information         and examples. 
     
   • Get back into your ```dataprep``` folder by running ```cd ../``` in the terminal. (*hint*: if you are lost use `pwd` to check where you are.
@@ -146,4 +146,4 @@ process_radtags](http://catchenlab.life.illinois.edu/stacks/manual/#procrad) on 
   -   In the process_radtags log file, what can the list of “sequences not recorded” tell you about the barcodes analysed and about the sequencing quality in general?
 
 
-Well done! Have a breath, sit back or help your neighbour, we will be back shortly!
+Well done! Take a breath, sit back or help your neighbour, we will be back shortly!
