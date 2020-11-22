@@ -41,9 +41,9 @@ OR from the launch of the Jupyter terminal:
         cd GBS
         
         
-   • The exercise from now on is hands-on, the instructions are there to guide you through the process but you will have to come up with the commands yourself. Fear not, the instructions in the text are there to help you andthe room is full of friendly faces here to help you get through it. 
+The exercise from now on is hands-on: the instructions are here to guide you through the process but you will have to come up with the specific commands yourself. Fear not, the instructions are there to help you and the room is full of friendly faces to help you get through it. 
       
-   •   We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
+1. We will create more subdirectories to hold our analyses. Be careful that you are reading and writing files to the appropriate directories within your hierarchy. You’ll be making many directories, so stay organized! We will name the directories in a way that correspond to each stage and that allow us to remember where they are. A well organized workspace makes analyses easier and prevents data from being overwritten.
     
   • First let's make a few directories. In ```GBS```, create a directory called ```dataprep``` to contain all the data  for this exercise. **Inside** that directory ``dataprep`` we will create two additional directories: ```lane1``` and ```samples```. 
     
@@ -80,7 +80,7 @@ module load FastQC
 fastqc *gz
 ```
 
-1. `module purge` get rids of any pre-existing potentially conflicting modules. 2. `module spider` simply search for a module called FastQC. 3.Once we found this module we can use `module load` to load the module. 4. Finally, we run `fastqc`  using of the wildcard `*` to select all *gz* files at once:
+4. `module purge` get rids of any pre-existing potentially conflicting modules. 2. `module spider` simply search for a module called FastQC. 3.Once we found this module we can use `module load` to load the module. 4. Finally, we run `fastqc`  using of the wildcard `*` to select all *gz* files at once:
 
 
    •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool circled below to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd`). You can then double click on a fastqc html report. 
