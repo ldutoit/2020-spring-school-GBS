@@ -75,11 +75,11 @@ Do you see `WARNING! Probable error in the input file.?` In our mainparams file 
 
 • Are the three Oregon threespine stickleback populations related to one another? How can you tell?
 
-Congrats, you just finished our tutorial for denovo RAD-Seq. Are you already done? It looks like it, here are a few things you coyld do:
+Congrats, you just finished our tutorial for the assembly of RAD-Seq data. Here are a few things you could do to solidify your learning from today.
 
-• You could spend a bit of time going through what you have done today and make sure you understand the set of steps we did in those few exercises.
+• You could spend a bit of time going through and making sure you understand the set of steps we did in those few exercises.
 
-• You could try running this set of analyses on a denovo dataset. You can use the one you generated yourself or a -M 2 dataset that is in `/nesi/project/nesi02659/obss_2020/resources/day3/output_denovo_M2`.
+• You could try running this set of analyses on a *de novo* dataset. You can use the one you generated yourself or the `-M 2` dataset that is in `/nesi/project/nesi02659/obss_2020/resources/day3/output_denovo_M2`.
 
 • You could have a look at this [tutorial](populationstructure_tuto/populationstructure_tuto.md). It is a small tutorial I wrote once that go over a different set of population genetics analyses in R. You could even try reproducing it using the vcf you generated above. The vcf for that particular set of analysis can be downloaded [here on the original repos](https://github.com/ldutoit/bully_gbs/blob/master/output_files/populations.snps.vcf), should you want to download it.
 
