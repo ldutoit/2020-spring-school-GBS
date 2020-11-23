@@ -18,15 +18,15 @@ The 30 samples have been mapped for you using BWA to save you time and effort. I
 
 ### Run Stacks with a reference genome
 
-In the folder `GBS` create the output folder for this analysis, `output_refmap`.
+In the folder `GBS` create an output folder for this analysis, `output_refmap`.
 
-we'll use the same samples as before. The mapped files are in:
+We'll use the same samples as before. The mapped files are in:
 
  ```/nesi/project/nesi02659/obss_2020/resources/day3/oregon_stickleback_mapped/```
 
-create a link to your current directory for this folder (*hint* `ln -s /path/to/link/ .` will link to your current directory)
+Create a link in your current directory for this folder (*hint* `ln -s /path/to/link/ .` will link to your current directory)
 
-refmap_map.pl has less options since the mapping take care of many of the steps from `denovo_map.pl` such as the creation of loci for each individuals before a comparison of all loci across all individuals. Use the [online help] (https://catchenlab.life.illinois.edu/stacks/comp/ref_map.php) to build your refmap command.
+refmap_map.pl has less options since the mapping takes care of many of the steps from `denovo_map.pl`, such as the creation of loci for each individual before a comparison of all loci across all individuals. Use the [online help] (https://catchenlab.life.illinois.edu/stacks/comp/ref_map.php) to build your refmap command.
 
 • Unlike in the previous exercise, ask for 2 threads 
 
