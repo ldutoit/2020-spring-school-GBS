@@ -11,13 +11,13 @@ Learn to run basic population genetics analyses
 
 ### Structure
 
-Our goal for now is to export a subset of loci for analysis in [Structure](https://web.stanford.edu/group/pritchardlab/structure.html), which analyzes the distribution of multi-locus genotypes within and among populations in a Bayesian framework to make predictions about the most probable population of origin for each individual. The assignment of each individual to a population is quantified in terms of Bayesian posterior probabilities, and visualized via a plot of posterior probabilities for each individual and population.
+Our goal now is to export a subset of loci for analysis in [Structure](https://web.stanford.edu/group/pritchardlab/structure.html), which analyzes the distribution of multi-locus genotypes within and among populations in a Bayesian framework to make predictions about the most probable population of origin for each individual. The assignment of each individual to a population is quantified in terms of Bayesian posterior probabilities, and visualized via a plot of posterior probabilities for each individual and population.
 
-A key user defined parameter is the hypothesized number of populations of origin which is represented by K. Sometimes the value of K is clear from from the biology, but more often a range of potential K-values must be explored and evaluated using a variety of likelihood based approaches to decide upon the ultimate K. In the interest of time we won’t be exploring different values of K here, but this will be a key step for your own data sets. In addition, at the moment Structure will take a long time to run on the number of loci generated in a typical RAD data set because of the MCMC algorithms involved in the Bayesian computations. We therefore want to randomly choose a random subset of loci that are well represented in our three populations. Nonetheless, this random subset contains more than enough information to define population structure:
+A key user defined parameter is the hypothesized number of populations of origin which is represented by K. Sometimes the value of K is clear from from the biology, but more often a range of potential K-values must be explored and evaluated using a variety of likelihood based approaches to decide upon the ultimate K. In the interests of time we won’t be exploring different values of K here, but this will be a key step for your own datasets. In addition, Structure takes a long time to run on the number of loci generated in a typical RAD data set because of the MCMC algorithms involved in the Bayesian computation. We therefore want to choose a random subset of loci that are well represented across our three populations. Despite 'downsampling', this random subset contains more than enough information to define population structure.
 
-The final stage of the Stacks pipeline is to run the `populations` program. Now, we want to execute just populations, rather than the full Stacks pipeline, to specify filters that will give us only the most well represented loci. Populations is a very useful piece of software both for filtering and for outputting population genetics. It can work with non-stacks generated data too.
+The final stage of the Stacks pipeline is to run the `populations` program. Now, we want to execute just `populations`, rather than the full Stacks pipeline, to specify filters that will give us only the most well-represented loci. `populations` is a very useful piece of software both for filtering and for outputting population genetics files and parameter estimates. It can work with non-stacks generated data too.
 
-The help of populations is [here](https://catchenlab.life.illinois.edu/stacks/comp/populations.php)
+The help for `populations` is [here](https://catchenlab.life.illinois.edu/stacks/comp/populations.php)
 
  • Since we won't be able to use all loci for our quick downstream analysis today, we will run populations again, specifying that loci must be present in at least 80% of individuals in all three populations to cut down on the total number of loci in the directory).
 
@@ -27,7 +27,7 @@ The help of populations is [here](https://catchenlab.life.illinois.edu/stacks/co
   
  • Also specify `output_refmap` as the output folder
 
-This command is now ready, assuming you are into GBS, run it! It is a quickie, so no need to put it in a job.
+This command is now ready, and assuming you are in the `GBS` folder, run it! It is a quickie, so no need to put it in a batch job.
  
 How many SNPs do you have left? We want to select 1,000 loci randomly from the results to run a relatively quick Structure analysis. We will save these loci into a file. We can easily do this using the shell given a list of catalog IDs output in the previous step. The populations.sumstats.tsv file gives a list of all polymorphic loci. 
 
