@@ -40,17 +40,17 @@ refmap_map.pl has less options since the mapping takes care of many of the steps
 
 • Is your command ready? Run it briefly to check that it starts properly, once it does **stop it using ctrl + c**
 
-• Time to put that into a job script. You can use the job script from the last exercise. We will simply make a copy of it under a different name. In practice, we often end up reusing our own scripts.
+• Time to put that into a job script. You can use the job script from the last exercise as a template. We will simply make a copy of it under a different name. In practice, we often end up reusing our own scripts.
 
    ```cp denovojob.sh refmapjob.sh```
 
-• Open refmapjob.sh using a text editor. Adjust the number of cpus o 2, adjust the running time to `10mn`, the job name to `refmap`,  and the output log to `refmap.log`. Most importantly, replace the denovo_map.pl command by your `ref_map.pl` command.
+• Open refmapjob.sh using a text editor. Adjust the number of cpus to 2, adjust the running time to `10mn`, the job name to `refmap`,  and the output log to `refmap.log`. Most importantly, replace the `denovo_map.pl` command with your `ref_map.pl` command.
 
-• Save it, and Run the job:
+• Save it, and run the job:
   
     ```sbatch refmapjob.sh```
 
-That should take about 5 minutes. Remember you can use `squeue -u <yourusername>` to check the status of the job. Once it is not there anymore, it ran.
+That should take about 5 minutes. Remember you can use `squeue -u <yourusername>` to check the status of the job. Once it is not there anymore, it has finished.
 
 
 ### Analyse your results.
