@@ -99,6 +99,6 @@ Examine the Stacks log and output files when execution is complete. You should f
     
    • Familiarize yourself with the population genetics statistics produced by the populations component of stacks `populations.sumstats_summary.tsv` inside the `output_denovo` folder
     
-   • What is the mean value of nucleotide diversity (π) and FIS for each of the three populations? [*hint*: The less -S command may help you view these files easily by avoiding the wrapping]
+   • What is the mean value of nucleotide diversity (π) and FIS across all the individuals? [*hint*: The less -S command may help you view these files easily by avoiding the wrapping]
 
 Congratulations, you obtained variants :)
