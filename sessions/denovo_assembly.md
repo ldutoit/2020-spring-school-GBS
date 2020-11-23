@@ -66,7 +66,7 @@ As a giant research team, we will run the *denovo* pipeline with different param
 
     • Open it with a text editor, have a look at what is there. The first line is `#!/bin/bash -e`: this is a [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix)) that tells the computing environment what language our script is written in. Following this, there are a bunch of lines that start with `#SBATCH`, which inform the system about who you are, which type of resources you need and for how long.
 
-    • For a few of the `#SBATCH` lines, there are some spaces labelled up like `<...>` for you to fill in. These spaces are followed by a comment starting by `#` that lets you know what you should be putting in there. With this information, fill in your job script.
+    • For a few of the `#SBATCH` lines, there are some spaces labelled up like `<...>` for you to fill in. These spaces are followed by a comment starting with a `#` that lets you know what you should be putting in there. With this information, fill in your job script.
 
     • Once you are done, save it. Then run it using:
 
