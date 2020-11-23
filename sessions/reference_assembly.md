@@ -34,7 +34,7 @@ Create a link in your current directory for this folder (*hint*: `ln -s /path/to
 
 • Specify the path to the input folder `oregon_stickleback_mapped/`
 
-• Specify the path to the population map. We will be able to use the same popmap than for the denovo analysis, since we use the same samples. 
+• Specify the path to the population map. We will be able to use the same popmap as for the denovo analysis, since we are using the same samples. 
 
 • We only want to keep the loci that are found in 80% of individuals. This is done by passing specific arguments to the `populations` software inside Stacks. The following should be added to your command: `-X "populations:  -r 0.80"`. Make sure you include the quotes.
 
