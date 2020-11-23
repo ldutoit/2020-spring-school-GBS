@@ -50,7 +50,7 @@ refmap_map.pl has less options since the mapping takes care of many of the steps
   
     sbatch refmapjob.sh
 
-That should take about 5 minutes. Remember you can use `squeue -u <yourusername>` to check the status of the job. Once it is not there anymore, it has finished. This job will write out an output log called `output_refmap/refmap.log` than you can check using `less`.
+That should take about 5 minutes. Remember you can use `squeue -u <yourusername>` to check the status of the job. Once it is not there anymore, it has finished. This job will write out an output log called `output_refmap/refmap.log` that you can check using `less`.
 
 
 ### Analyse your results.
