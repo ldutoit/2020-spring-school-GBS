@@ -50,7 +50,7 @@ As a giant research team, we will run the *denovo* pipeline with different param
 
     • Make sure you specify this population map to the denovo_map.pl command.
     
-    • There are three important parameters that must be specified to denovo_map.pl, the minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed between catalog loci (`n`) **that should be set to M+2**. Choose which values of M (M < 8) you want to run, not overlapping with parameters other people have already chosen, and insert them into [this google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M (between 1 and 8) and n (which should be M + 2) as well as `-r/--min-samples-per-pop` anywhere between 0.50 and 1.
+    • There are three important parameters that must be specified to denovo_map.pl, the minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed between catalog loci (`n`). Choose which values of M and n you want to run, not overlapping with parameters other people have already chosen, and insert them into [this google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M (between 1 and 8) and n as well as `-r/--min-samples-per-pop` at 0.8 .
     
     • You must set the `output_denovo` directory as the output, and use 4 threads (4 CPUs: so your analysis finishes faster than 1!).
         
