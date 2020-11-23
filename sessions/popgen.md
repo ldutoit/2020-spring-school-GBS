@@ -15,7 +15,7 @@ Our goal for now is to export a subset of loci for analysis in [Structure](https
 
 A key user defined parameter is the hypothesized number of populations of origin which is represented by K. Sometimes the value of K is clear from from the biology, but more often a range of potential K-values must be explored and evaluated using a variety of likelihood based approaches to decide upon the ultimate K. In the interest of time we won’t be exploring different values of K here, but this will be a key step for your own data sets. In addition, at the moment Structure will take a long time to run on the number of loci generated in a typical RAD data set because of the MCMC algorithms involved in the Bayesian computations. We therefore want to randomly choose a random subset of loci that are well represented in our three populations. Nonetheless, this random subset contains more than enough information to define population structure:
 
-The final stage of the Stacks pipeline is to run the `populations` program. Now, we want to execute just populations, rather than the full Stacks pipeline, to specify filters that will give us only the most well represented loci. Populations is a very useful pice of software both for filtering and for outputting population genetics. It can work with non-stacks generated data too.
+The final stage of the Stacks pipeline is to run the `populations` program. Now, we want to execute just populations, rather than the full Stacks pipeline, to specify filters that will give us only the most well represented loci. Populations is a very useful piece of software both for filtering and for outputting population genetics. It can work with non-stacks generated data too.
 
 The help of populations is [here](https://catchenlab.life.illinois.edu/stacks/comp/populations.php)
 
@@ -72,12 +72,12 @@ Create a new directory called structure within the `GBS` folder and copy the Str
 
 • So far, when we've gone to run programs, we've been able to use `module spider` to figure out the program name, and then module load program_name to get access to the program and run it. Do it one more time for `structure`
 
-•  run structure by simply typing `structure` !!!! THIS DOES NOT RUN
+•  run structure by simply typing `structure` 
 
  
-Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your stacks directory, how many variant sites remained after filtering? This is the number of loci actually contained in your structure file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
+Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your `output_refmap` directory, how many variant sites remained after filtering? This is the number of loci actually contained in your structure file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
 
-!!!You will need to download Structure with the graphical front end and use scp to download the populations.structure.out_f file from the cluster. You can then load this file into the graphical interface for Structure on your local computer. Select the File menu and then Load structure results to load the Structure output. Choose the Barplot menu and then Show.
+!!!You will need to download [Structure] with the graphical front end and use scp to download the populations.structure.out_f file from the cluster. You can then load this file into the graphical interface for Structure on your local computer. Select the File menu and then Load structure results to load the Structure output. Choose the Barplot menu and then Show.
 
 • Are the three Oregon threespine stickleback populations related to one another? How can you tell?
 
@@ -87,6 +87,6 @@ Congrats, you just finished our tutorial for denovo RAD-Seq. Are you already don
 
 • You could try running this set of analyses on a denovo dataset. You can use the one you generated yourself or a -M 2 dataset that is in `/nesi/project/nesi02659/obss_2020/resources/day3/output_denovo_M2`.
 
-• You could have a look at this [tutorial](https://github.com/ldutoit/bully_gbs/blob/master/populationstructure_tuto/populationstructure_tuto.md). It is a small tutorial I wrote once that go over a different set of population genetics analyses in R. You could even try reproducing it using the vcf you generated above.
+• You could have a look at this [tutorial](populationstructure_tuto/populationstructure_tuto.md). It is a small tutorial I wrote once that go over a different set of population genetics analyses in R. You could even try reproducing it using the vcf you generated above. The vcf for that particular set of analysis can be downloaded [here on the original repos](https://github.com/ldutoit/bully_gbs/blob/master/output_files/populations.snps.vcf), should you want to download it.
 
 
