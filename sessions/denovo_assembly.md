@@ -82,15 +82,15 @@ As a giant research team, we will run the *denovo* pipeline with different param
 
 ## Analysing the data from our collaborative optimisation
 
-Examine the Stacks log and output files when execution is complete. You should find all this info in `output_denovo/denovo_map.log`
+Examine the Stacks log and output files when execution is complete. You should find all of this info in `output_denovo/denovo_map.log`
     
    • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of each sample. Find this table in `output_denovo/denovo_map.log`: what were the depths of coverage? 
     
-   • Examine the output of the populations program in the file populations.log inside your `output_denovo` folder (*hint*: use the `less` command).
+   • Examine the output of the populations program in the file `populations.log` inside your `output_denovo` folder (*hint*: use the `less` command).
     
    • How many loci were identified?
 
-   • How many SNPs were identified?
+   • How many variant sites were identified?
 
    Enter that information in the collaborative [Google Sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ
      Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit?usp=sharing)
