@@ -26,7 +26,7 @@ We'll use the same samples as before. The mapped files are in:
 
 Create a link in your current directory for this folder (*hint*: `ln -s /path/to/link/ .` will link to your current directory)
 
-`refmap_map.pl` has less options since the mapping takes care of many of the steps from `denovo_map.pl`, such as the creation of loci for each individual before a comparison of all loci across all individuals. Use the [online help] (https://catchenlab.life.illinois.edu/stacks/comp/ref_map.php) to build your refmap command.
+`refmap_map.pl` has less options since the mapping takes care of many of the steps from `denovo_map.pl`, such as the creation of loci for each individual before a comparison of all loci across all individuals. Use the [online help](https://catchenlab.life.illinois.edu/stacks/comp/ref_map.php) to build your refmap command.
 
 • Unlike in the previous exercise, ask for 2 threads 
 
