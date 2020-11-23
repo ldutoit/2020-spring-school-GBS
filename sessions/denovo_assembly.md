@@ -4,12 +4,12 @@
 
 **Adapted by:** Ludovic Dutoit
 
-### Goals
+## Goals
   
   - Learn to call SNPs without a reference genome and to optimise the procedure
   - Learn to run SLURM scripts
 
-### Introduction
+## Introduction
 
 In this second exercise we will be working on threespine stickleback data sampled from throughout Oregon, on the West Coast of the United States. These sticklebacks can be found in a number of habitats from costal marine and freshwater habitats, to inland river habitats, to high mountain lakes in the interior of Oregon. We want to understand how these populations relate to one another and in this exercise, you will examine three of these populations: a coastal marine population, a coastal freshwater, and an inland river population. Our data consist of 30 samples in these three populations. For more information on the background of this study, see [Catchen et al, 2013](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330).
 
@@ -82,7 +82,7 @@ As a giant research team, we will run the *denovo* pipeline with different param
 • Once `squeue` is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 1h to run, so in the meantime, sit back and relax, we'll get back to this after lunch!
 
 
-### Analysing the data from our collaborative optimisation
+## Analysing the data from our collaborative optimisation
 
 5. Examine the Stacks log and output files when execution is complete. You should find all this info in `denovo.log`
     
