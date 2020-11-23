@@ -51,26 +51,25 @@ You got this! If you are new to bash, I am sure writing this command seemed impo
 
 Now we will execute `populations` again, this time feeding back in the whitelist you just generated. Check out the [help](https://catchenlab.life.illinois.edu/stacks/comp/populations.php) of `populations` to see how to use a white list. This will cause populations to only process the loci in the `whitelist.txt`. 
 
-• Specify that a Structure output file be included this time.
+• Specify that a `structure` output file be included this time.
  
 • Specify `--write-single-snp` so that only one snp per locus is output as we need genetically unlinked SNPs (i.e. statistically)
 
-• Finally, you will need to again specify the population map so that this information is passed into the Structure output file. This time we will specify the population map with the proper population information. That file is at `/nesi/project/nesi02659/obss_2020/resources/day3/complete_popmap.txt`. You can copy this file here, link it, or simply specify the full path, your call! All of these 3 solutions should work.
+• Finally, you will need to again specify the population map so that this information is passed into the `structure` output file. This time we will specify the population map with the proper population information. That file is at `/nesi/project/nesi02659/obss_2020/resources/day3/complete_popmap.txt`. You can copy this file here, link it, or simply specify the full path, your call! All of these 3 solutions should work.
 
-• We've run commands to generate the structure file two times now, but how many structure files are there in the stacks directory? If you wanted to save several different vcf and structure files generated using different `populations` options, what would you have to do?
+• We've run commands to generate the `structure` file two times now, but how many `structure` files are there in the stacks directory? If you wanted to save several different `vcf` and `structure` files generated using different `populations` options, what would you have to do?
 
-Create a new directory called structure within the `GBS` folder and copy the Structure output file that Stacks generated to this directory. `cd` into your new structure directory.
+Create a new directory called `structure` within the `GBS` folder and copy the `structure` output file that Stacks generated to this directory. `cd` into your new `structure` directory.
 
-• Edit the Structure output file to remove the comment line (i.e. first line in the file, starts with “#”).
+• Edit the `structure` output file to remove the comment line (i.e. first line in the file, starts with “#”).
 
-• The parameters to run Structure (with value of K=3) have already been prepared, you can find them here: `/nesi/project/nesi02659/obss_2020/resources/day3/mainparams` and `/nesi/project/nesi02659/obss_2020/resources/day3/extraparams`. Copy them into your structure directory as well.
+• The parameters to run `structure` (with value of K=3) have already been prepared, you can find them here: `/nesi/project/nesi02659/obss_2020/resources/day3/mainparams` and `/nesi/project/nesi02659/obss_2020/resources/day3/extraparams`. Copy them into your `structure` directory as well.
 
 • So far, when we've gone to run programs, we've been able to use `module spider` to figure out the program name, and then module load program_name to get access to the program and run it. Do it one more time for `structure`
 
-•  run structure by simply typing `structure` 
+•  run `structure` by simply typing `structure` 
 
- 
-Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your `output_refmap` directory, how many variant sites remained after filtering? This is the number of loci actually contained in your structure file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
+Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your `output_refmap` directory, how many variant sites remained after filtering? This is the number of loci actually contained in your `structure` file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
 
 !!!You will need to download [Structure] with the graphical front end and use scp to download the populations.structure.out_f file from the cluster. You can then load this file into the graphical interface for Structure on your local computer. Select the File menu and then Load structure results to load the Structure output. Choose the Barplot menu and then Show.
 
