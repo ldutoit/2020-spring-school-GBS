@@ -15,11 +15,11 @@ In this second exercise we will be working on threespine stickleback data sample
 
 Without access to a reference genome, we want to assemble the RAD loci and examine population structure. However, before we can do that, we want to explore the *de novo* parameter space in order to be confident that we are assembling our data in an optimal way. Stack (i.e. locus) formation is controlled by three main parameters: 
 
--m :  the minimum amount of reads to create a locus)
+-m :  the minimum amount of reads to create a locus (default: 3)
 
-**-M : the number of mismatches allowed between alleles of the same locus**
+**-M : the number of mismatches allowed between alleles of the same locus (i.e. The one we want to optimise)**
 
--n : The number of mismatches between between loci between individuals
+-n : The number of mismatches between between loci between individuals (default 1)
 
 If that does not make sense or you would like to know more, have a quick read of [this explanation from the manual](http://catchenlab.life.illinois.edu/stacks/param_tut.php).
 
@@ -50,7 +50,9 @@ As a giant research team, we will run the *denovo* pipeline with different param
 
     • Make sure you specify this population map to the denovo_map.pl command.
     
-    • There are three important parameters that must be specified to denovo_map.pl, the minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed between catalog loci (`n`). Choose which values of M and n you want to run, not overlapping with parameters other people have already chosen, and insert them into [this google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M (between 1 and 8) and n as well as `-r/--min-samples-per-pop` at 0.8 .
+    • Specify `-r/--min-samples-per-pop` at 0.8, requiring 80% of samples to have a given locus for it to be kept in the output.
+    
+    • There are three important parameters that must be specified to denovo_map.pl, the minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed between catalog loci (`n`). Choose which values of M  you want to run (M<10), not overlapping with parameters other people have already chosen, and insert them into [this google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0). You can vary M (between 1 and 8). If you find most M values already running in the spreadsheer, you could vary -r away from 0.8% to see how that affect the results., .
     
     • You must set the `output_denovo` directory as the output, and use 4 threads (4 CPUs: so your analysis finishes faster than 1!).
         
