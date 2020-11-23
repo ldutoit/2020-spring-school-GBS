@@ -71,7 +71,7 @@ Create a new directory called `structure` within the `GBS` folder and copy the `
 
 Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your `output_refmap` directory, how many variant sites remained after filtering? This is the number of loci actually contained in your `structure` file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
 
-!!!You will need to download [Structure] with the graphical front end and use scp to download the populations.structure.out_f file from the cluster. You can then load this file into the graphical interface for Structure on your local computer. Select the File menu and then Load structure results to load the Structure output. Choose the Barplot menu and then Show.
+!!!You will need to download [Structure](https://web.stanford.edu/group/pritchardlab/structure_software/release_versions/v2.3.4/html/structure.html) with the graphical front end and use `scp` to download the `populations.structure.out_f` file from the cluster. You can then load this file into the graphical interface for `structure` on your local computer. Select the `File` menu and then `Load structure results` to load the `structure` output. Choose the `Barplot menu` and then `Show`.
 
 • Are the three Oregon threespine stickleback populations related to one another? How can you tell?
 
