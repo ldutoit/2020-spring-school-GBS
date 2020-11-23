@@ -29,13 +29,13 @@ The help for `populations` is [here](https://catchenlab.life.illinois.edu/stacks
 
 This command is now ready, and assuming you are in the `GBS` folder, run it! It is a quickie, so no need to put it in a batch job.
  
-How many SNPs do you have left? We want to select 1,000 loci randomly from the results to run a relatively quick Structure analysis. We will save these loci into a file. We can easily do this using the shell given a list of catalog IDs output in the previous step. The populations.sumstats.tsv file gives a list of all polymorphic loci. 
+How many SNPs do you have left? We want to select 1,000 loci randomly from the results to run a relatively quick Structure analysis. We will save these loci into a file. We can easily do this using the shell given a list of catalog IDs output in the previous step. The `populations.sumstats.tsv` file gives a list of all polymorphic loci. 
 
-With the help of the instructions below, use the cat, grep, cut, sort, uniq, shuf, and head commands to generate a list of 1000 random loci. Save this list of loci as whitelist.txt, that we can feed back into populations. This operation can be done in a single shell command. That sounds challenging, but the instructions below should help you create one command with several pipes to create that `whitelist.txt` file. The idea of a pipe is to connect commands using `|`. `command 1 | command 2` outputs the content of command 1 into command 2 instead of outputting it to the screen.
+With the help of the instructions below, use the `cat`, `grep`, `cut`, `sort`, `uniq`, `shuf`, and `head` commands to generate a list of 1,000 random loci. Save this list of loci as `whitelist.txt`, so that we can feed it back into `populations`. This operation can be done in a single shell command. That sounds challenging, but the instructions below should help you create one command with several pipes to create that `whitelist.txt` file. The idea of a pipe is to connect commands using `|` e.g. `command 1 | command 2` outputs the content of command 1 into command 2 instead of outputting it to the screen.
 
-Create that command step by step:
+Let's create that command step by step:
 
-• First, use `cat` to concatenante `output_refmap/populations.sumstats.tsv`.
+• First, use `cat` to concatenante `output_refmap/populations.sumstats.tsv` (stream it to the next command)
 
 • Then, add a `|` in your command and use the command `grep` with `-v` to exclude all headers (i.e. `-v` stands for exclude, we want to exclude all the lines with "#")
 
@@ -43,22 +43,17 @@ Create that command step by step:
 
 • Then using two more pipes, use `sort` before using `uniq`. `uniq` will collapse succesive identical lines into single lines, so that you have one line per locus. Lucky us, those two commands don't require any arguments.
 
-• Now try adding `shuf` which will mix all these lines all over.
+• Now try adding `shuf` which will mix all these lines all over. 
 
-• Select the first one thousand lines with `head -n 1000` and put it all into whitelist.txt. (*hint*: use ">" to redirect into a file).
+• Select the first one thousand lines with `head -n 1000` and put it all into whitelist.txt. (*hint*: use ">" to redirect into a file). Do not worry about the shuf: `write error: Broken pipe`, it is simply because head stops the command before the end.
 
-• Do not worry about the shuf: `write error: Broken pipe`, it is simply because head stops the command before the end.
- 
+You got this! If you are new to bash, I am sure writing this command seemed impossible on Monday, so take a minute to congratulate yourself on the progress made even if you required a little help!
 
-You got this! If you are new to bash, I am sure that seemed impossible on monday, so take a minute to congratulate yourself on the progress made even if you required a little help!
-
-Now we will execute `populations` again, this time feeding back in the whitelist you just generated, check out the help of populations to see how to use a white list. This will cause populations to only process the loci in the `whitelist.txt`. 
-
-• The [help of Populations](https://catchenlab.life.illinois.edu/stacks/comp/populations.php) will tell you how to pass a white list.
+Now we will execute `populations` again, this time feeding back in the whitelist you just generated. Check out the [help](https://catchenlab.life.illinois.edu/stacks/comp/populations.php) of `populations` to see how to use a white list. This will cause populations to only process the loci in the `whitelist.txt`. 
 
 • Specify that a Structure output file be included this time.
  
-• Specify `--write-single-snp` that should generate one snp per locus as we need genetically unlinked SNPs (i.e. statistically)
+• Specify `--write-single-snp` so that only one snp per locus is output as we need genetically unlinked SNPs (i.e. statistically)
 
 • Finally, you will need to again specify the population map so that this information is passed into the Structure output file. **Careful** This time we will specify the population map with the proper population information. That file is at `/nesi/project/nesi02659/obss_2020/resources/day3/complete_popmap.txt`. You can copy this file here, link it, or simply specify the full path, your call! Al of these 3 solutions should work.
 
