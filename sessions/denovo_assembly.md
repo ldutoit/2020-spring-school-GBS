@@ -78,15 +78,15 @@ As a giant research team, we will run the *denovo* pipeline with different param
    
       • We used a few basic options of sbatch, including time, memory, job names and output log file. In reality, there are many, many, more options. Have a quick look at `sbatch --help` out of interest. NeSI also has its own handy guide on how to submit a job [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job).
 
-      • Once your job is no longer listed in `squeue` is empty, it has finished and what would have printed to your screen is into denovo.out. That should take about 1h to run, so in the meantime, sit back and relax, we'll get back to this after lunch!
+      • Once your job is no longer listed in `squeue` is empty, it has finished and what would have printed to your screen has instead printed into denovo.log. Your job should take about 1 hour to run, so in the meantime, sit back and relax, we'll get back to this after lunch!
 
 ## Analysing the data from our collaborative optimisation
 
-Examine the Stacks log and output files when execution is complete. You should find all this info in `denovo.log`
+Examine the Stacks log and output files when execution is complete. You should find all this info in `output_denovo/denovo_map.log`
     
-   • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl   will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of  each sample. Find this table in the log, what were the depths of coverage? 
+   • After processing all the individual samples through ustacks and before creating the catalog with cstacks, denovo_map.pl will print a [table containing the depth of coverage](http://catchenlab.life.illinois.edu/stacks/manual/#cov) of each sample. Find this table in `output_denovo/denovo_map.log`: what were the depths of coverage? 
     
-   • Examine the output of the populations program in the file denovo.log inside your `output_denovo` folder. (*hint*: use the `less` command).
+   • Examine the output of the populations program in the file populations.log inside your `output_denovo` folder (*hint*: use the `less` command).
     
    • How many loci were identified?
 
@@ -95,7 +95,7 @@ Examine the Stacks log and output files when execution is complete. You should f
    Enter that information in the collaborative [Google Sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ
      Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit?usp=sharing)
     
-   • How many were filtered and for what reasons?
+   • How many loci were filtered and for what reasons?
     
    • Familiarize yourself with the population genetics statistics produced by the populations component of stacks populations.sumstats_summary.tsv inside the output_denovo
     
