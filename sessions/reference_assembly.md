@@ -63,7 +63,7 @@ That should take about 5 minutes. Remember you can use `squeue -u <yourusername>
 
   • How does this run compare to the runs on the [Google Sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU) ?
 
- • Why did it run so much faster than `denovo_map.pl`
+ • Why did it run so much faster than `denovo_map.pl` ?
  
  • As a thought exercise: Do you have any idea how we could check whether the same loci have been found as in the *de novo* run or not?
 
