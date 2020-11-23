@@ -74,7 +74,7 @@ derived.
 
    •  You just generated a few FastQC reports. Use the Jupyter hub navigator tool (click on the folder shown in the red rectangle at the top left in the image below) to follow the path to your current folder (*hint*: If you're not quite sure where you are, use `pwd` in your terminal window. Also, if `obss_2020` doesn't show up in the menu on the left, you might need to also click the littler folder icon just above `Name`). Once you've navigated to the correct folder, you can then double click on a fastqc html report. 
    
-   <p align="center"><br><img src="img/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p></p>
+   <p align="center"><br><img src="img/Navigate_toFastqcFile.png" alt="drawing" width="700"/></p>
 
 5. Let's look at this FastQC report together:
 
