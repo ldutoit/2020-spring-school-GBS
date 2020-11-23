@@ -55,7 +55,7 @@ Now we will execute `populations` again, this time feeding back in the whitelist
  
 • Specify `--write-single-snp` so that only one snp per locus is output as we need genetically unlinked SNPs (i.e. statistically)
 
-• Finally, you will need to again specify the population map so that this information is passed into the Structure output file. **Careful** This time we will specify the population map with the proper population information. That file is at `/nesi/project/nesi02659/obss_2020/resources/day3/complete_popmap.txt`. You can copy this file here, link it, or simply specify the full path, your call! Al of these 3 solutions should work.
+• Finally, you will need to again specify the population map so that this information is passed into the Structure output file. This time we will specify the population map with the proper population information. That file is at `/nesi/project/nesi02659/obss_2020/resources/day3/complete_popmap.txt`. You can copy this file here, link it, or simply specify the full path, your call! Al of these 3 solutions should work.
 
 • We've run commands to generate the structure file two times now, but how many structure files are there in the stacks directory? If you wanted to save several different vcf and structure files generated using different populations options, what would you have to do?
 
