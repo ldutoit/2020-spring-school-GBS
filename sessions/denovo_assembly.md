@@ -62,9 +62,9 @@ As a giant research team, we will run the *denovo* pipeline with different param
 
   4. Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run our commands directly. On a day to day basis, you would be logging in on the login node of NeSI's Mahuika (i.e. the place you reach when you login) and running jobs using a "batch script". The batch script (or submission script) accesses all the computing resources that are tucked away from the Mahuika login node. This allows your commands to be run as jobs that are sent out to computing resources elsewhere on Mahuika, rather than having to run jobs on the login node itself (which can slow down people logging in/transferring files if the login node is busy running peoples' jobs!). We will use this denovo_map.pl command as a perfect example to run our first job using a batch script.       
   
-     • copy an example jobfile into this directory. The example is at: ```/nesi/project/nesi02659/obss_2020/resources/day3/denovojob.sh```  
+     • copy the example jobfile into this directory. The example is at: ```/nesi/project/nesi02659/obss_2020/resources/day3/denovojob.sh```  
    
-     • Open it with a text editor, have a look at what is there. The first line is `#!/bin/bash -e`: this is a [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix)) that tells the computing environment what language our script is written in. Following this, there are a bunch of lines that start with `#SBATCH`, which inform the system about who you are, which type of resources you need and for how long.  
+     • Open it with a text editor, have a look at what is there. The first line is `#!/bin/bash -e`: this is a [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix)) that tells the computing environment that language our script is written in. Following this, there are a bunch of lines that start with `#SBATCH`, which inform the system about who you are, which type of resources you need, and for how long.  
     
       • For a few of the `#SBATCH` lines, there are some spaces labelled up like `<...>` for you to fill in. These spaces are followed by a comment starting with a `#` that lets you know what you should be putting in there. With this information, fill in your job script.  
    
@@ -76,10 +76,9 @@ As a giant research team, we will run the *denovo* pipeline with different param
 
           squeue -u <yourusername>
    
-      • We used a few basic options of sbatch, time, memory, job names and output log file. In reality, there are many many more options, have a quick look at sbatch --help out of interest. NeSI also has its own handy guide on how to submit a job [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job).
- 
+      • We used a few basic options of sbatch, including time, memory, job names and output log file. In reality, there are many, many, more options. Have a quick look at `sbatch --help` out of interest. NeSI also has its own handy guide on how to submit a job [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job).
 
-      • Once `squeue` is empty, your job ran and what would have printed to your screen is into denovo.out. That should take about 1h to run, so in the meantime, sit back and relax, we'll get back to this after lunch!
+      • Once your job is no longer listed in `squeue` is empty, it has finished and what would have printed to your screen is into denovo.out. That should take about 1h to run, so in the meantime, sit back and relax, we'll get back to this after lunch!
 
 ## Analysing the data from our collaborative optimisation
 
