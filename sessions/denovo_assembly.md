@@ -61,10 +61,14 @@ As a giant research team, we will run the *denovo* pipeline with different param
     • Is it starting alright?  Good, now  **Use `control + c` to stop your command**
 
   4. Running the commands directly on the screen is not common practice. You now are on ga-vl01 which is a reserved amount of resources for this workshop and this allows us to run our commands directly. On a day to day basis, you would be logging in on the login node of NeSI's Mahuika (i.e. the place you reach when you login) and running jobs using a "batch script". The batch script (or submission script) accesses all the computing resources that are tucked away from the Mahuika login node. This allows your commands to be run as jobs that are sent out to computing resources elsewhere on Mahuika, rather than having to run jobs on the login node itself (which can slow down people logging in/transferring files if the login node is busy running peoples' jobs!). We will use this denovo_map.pl command as a perfect example to run our first job using a batch script.
-    • copy an example jobfile into this directory. The example is at: ```/nesi/project/nesi02659/obss_2020/resources/day3/denovojob.sh```  
-    • Open it with a text editor, have a look at what is there. The first line is `#!/bin/bash -e`: this is a [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix)) that tells the computing environment what language our script is written in. Following this, there are a bunch of lines that start with `#SBATCH`, which inform the system about who you are, which type of resources you need and for how long.  
-    • For a few of the `#SBATCH` lines, there are some spaces labelled up like `<...>` for you to fill in. These spaces are followed by a comment starting with a `#` that lets you know what you should be putting in there. With this information, fill in your job script.  
-    • Once you are done, save it. Then run it using:  
+  
+   • copy an example jobfile into this directory. The example is at: ```/nesi/project/nesi02659/obss_2020/resources/day3/denovojob.sh```  
+   
+   • Open it with a text editor, have a look at what is there. The first line is `#!/bin/bash -e`: this is a [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix)) that tells the computing environment what language our script is written in. Following this, there are a bunch of lines that start with `#SBATCH`, which inform the system about who you are, which type of resources you need and for how long.  
+   
+   • For a few of the `#SBATCH` lines, there are some spaces labelled up like `<...>` for you to fill in. These spaces are followed by a comment starting with a `#` that lets you know what you should be putting in there. With this information, fill in your job script.  
+   
+   • Once you are done, save it. Then run it using:  
 
 
         sbatch denovojob.sh
