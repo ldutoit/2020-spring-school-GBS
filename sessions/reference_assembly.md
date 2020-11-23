@@ -24,7 +24,7 @@ We'll use the same samples as before. The mapped files are in:
 
  ```/nesi/project/nesi02659/obss_2020/resources/day3/oregon_stickleback_mapped/```
 
-Create a link in your current directory for this folder (*hint* `ln -s /path/to/link/ .` will link to your current directory)
+Create a link in your current directory for this folder (*hint*: `ln -s /path/to/link/ .` will link to your current directory)
 
 refmap_map.pl has less options since the mapping takes care of many of the steps from `denovo_map.pl`, such as the creation of loci for each individual before a comparison of all loci across all individuals. Use the [online help] (https://catchenlab.life.illinois.edu/stacks/comp/ref_map.php) to build your refmap command.
 
