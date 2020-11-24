@@ -13,6 +13,10 @@
 
 In this second exercise we will be working on threespine stickleback data sampled from throughout Oregon, on the West Coast of the United States. These sticklebacks can be found in a number of habitats from costal marine and freshwater habitats, to inland river habitats, to high mountain lakes in the interior of Oregon. We want to understand how these populations relate to one another and in this exercise, you will examine three of these populations: a coastal marine population, a coastal freshwater, and an inland river population. Our data consist of 30 samples in these three populations. For more information on the background of this study, see [Catchen et al, 2013](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330).
 
+  <p align="center"><br><img src="img/map_stickleback2.png" alt="drawing" width="700"/></p>
+Map of Stickleback populations
+
+
 Without access to a reference genome, we want to assemble the RAD loci and examine population structure. However, before we can do that, we want to explore the *de novo* parameter space in order to be confident that we are assembling our data in an optimal way. Stack (i.e. locus) formation is controlled by three main parameters: 
 
 -m :  the minimum amount of reads to create a locus (default: 3)
