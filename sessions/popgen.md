@@ -85,7 +85,7 @@ plotQ(data,showindlab = TRUE,useindlab=TRUE)  # http://www.royfrancis.com/pophel
 
 • Are the three Oregon threespine stickleback populations related to one another? How can you tell? Use the population labels on the map below to think about it (cs: Cushman Slough , pcr: Poney Creek reservoir, stl: South Twin Lake; [original paper](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330))
 
-  <p align="center"><br><img src="img/map_sticleback.png" alt="drawing" width="700"/></p>
+  <p align="center"><br><img src="img/map_stickleback.png" alt="drawing" width="700"/></p>
 
 
 Congrats, you just finished our tutorial for the assembly of RAD-Seq data.
