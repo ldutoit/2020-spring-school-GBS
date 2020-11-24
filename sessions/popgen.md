@@ -93,6 +93,9 @@ Here are a few things you could do to solidify your learning from today.
 
 
 ### Extra activities
+
+• You could play a bit with the parameters of `plotQ()` at [http://www.royfrancis.com/pophelper/reference/readQ.html](http://www.royfrancis.com/pophelper/reference/readQ.html) to make a prettier figure.
+
 • You could spend a bit of time going through and making sure you understand the set of steps we did in those few exercises.
 
 • You could try running this set of analyses on a *de novo* dataset. You can use the one you generated yourself or the `-M 2` dataset that is in `/nesi/project/nesi02659/obss_2020/resources/day3/output_denovo_M2`.
