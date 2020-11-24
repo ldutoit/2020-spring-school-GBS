@@ -59,6 +59,8 @@ As a giant research team, we will run the *denovo* pipeline with different param
     • In groups of 2, it is time to run an optimisation. So have a sip until your neighbor catch up or help them along. There are three important parameters that must be specified to denovo_map.pl, the minimum stack/locus depth (`m`), the distance allowed between stacks/loci (`M`), and the distance allowed between catalog loci (`n`). Choose which values of `M`  you want to run (M<10), not overlapping with parameters other people have already chosen, and insert them into [this google sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0).You can vary M (between 1 and 8). If you find most M values already running in the spreadsheet, you could vary -r away from 0.8 to see how that affect the results.
    
    • Set `n` = to `M`, so if you set `M` at 3, set `n` at 3.
+   
+   • Set `m` at 3
     
     • You must set the `output_denovo` directory as the output, and use 4 threads (4 CPUs: so your analysis finishes faster than 1!).
    
