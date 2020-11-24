@@ -71,11 +71,30 @@ Create a new directory called `structure` within the `GBS` folder and copy the `
 
 Do you see `WARNING! Probable error in the input file.?` In our mainparams file it says that we have 1000 loci, but due to filters, it is possible that the populations module of Stacks actually output less than the 1000 loci we requested in whitelist.txt. In the output of populations.log in your `output_refmap` directory, how many variant sites remained after filtering? This is the number of loci actually contained in your `structure` file. You will need to adjust the number of loci in the mainparams file to match this exact Stacks output.
 
-!!!You will need to download [Structure](https://web.stanford.edu/group/pritchardlab/structure_software/release_versions/v2.3.4/html/structure.html) with the graphical front end and use `scp` to download the `populations.structure.out_f` file from the cluster. You can then load this file into the graphical interface for `structure` on your local computer. Select the `File` menu and then `Load structure results` to load the `structure` output. Choose the `Barplot menu` and then `Show`.
+### Structure Visualisation
 
-• Are the three Oregon threespine stickleback populations related to one another? How can you tell?
+•  Once you ran `structure` successfully. It is time to visualise the results. We will do that in R.
+•  Open an R launcher, be careful to open R 4.0.1 to have access to all the needed packages.
+```r
+setwd("/nesi/project/nesi02659/obss_2020/users/<username>/GBS/structure") # Get R to your own structure folder
+library("pophelper")# load plotting module for structure http://www.royfrancis.com/pophelper/reference/readQ.html
+data<-readQ("populations.structure.out_f",filetype = "structure",indlabfromfile=TRUE)
+plotQ(data,showindlab = TRUE,useindlab=TRUE)  # http://www.royfrancis.com/pophelper/reference/readQ.html
+```
+•  That should create a structure image in your structure folder. Use the path navigator on the left to reach your folder to be able to visualise the picture by double-clicking on it.
 
-Congrats, you just finished our tutorial for the assembly of RAD-Seq data. Here are a few things you could do to solidify your learning from today.
+• Are the three Oregon threespine stickleback populations related to one another? How can you tell? Use the population labels on the map below to think about it (cs: Cushman Slough , pcr: Poney Creek reservoir, stl: South Twin Lake; [original paper](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330))
+
+  <p align="center"><br><img src="img/map_sticleback.png" alt="drawing" width="700"/></p>
+
+
+Congrats, you just finished our tutorial for the assembly of RAD-Seq data.
+Here are a few things you could do to solidify your learning from today.
+
+
+### Extra activities
+
+• You could play a bit with the parameters of `plotQ()` at [http://www.royfrancis.com/pophelper/reference/readQ.html](http://www.royfrancis.com/pophelper/reference/readQ.html) to make a prettier figure.
 
 • You could spend a bit of time going through and making sure you understand the set of steps we did in those few exercises.
 
