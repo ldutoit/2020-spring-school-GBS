@@ -98,8 +98,7 @@ Examine the Stacks log and output files when execution is complete. You should f
 
    • How many variant sites were identified?
 
-   Enter that information in the collaborative [Google Sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ
-     Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit?usp=sharing)
+   Enter that information in the collaborative [Google Sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ6Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit#gid=0)
     
    • How many loci were filtered?
     
