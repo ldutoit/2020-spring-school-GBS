@@ -12,7 +12,7 @@ The goal of this first exercise is to take you from raw reads data to individual
  - We will check the quality of the data
  - Assign reads to individual samples
 
-## Part 1: Single-end reads
+## Working with single-end reads
 
 The first step in the analysis of all short-read sequencing data, including RAD-seq
 data, is removing low quality sequences and separating out reads from different
