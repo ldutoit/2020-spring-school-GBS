@@ -101,7 +101,7 @@ Examine the Stacks log and output files when execution is complete. You should f
    Enter that information in the collaborative [Google Sheet](https://docs.google.com/spreadsheets/d/13qm_fFZ4yoegZ
      Gyc_-wobHFb7HZxp27mrAHGPmnjRU/edit?usp=sharing)
     
-   • How many loci were filtered and for what reasons?
+   • How many loci were filtered?
     
    • Familiarize yourself with the population genetics statistics produced by the populations component of stacks `populations.sumstats_summary.tsv` inside the `output_denovo` folder
     
