@@ -60,7 +60,7 @@ As a giant research team, we will run the *denovo* pipeline with different param
    
    • Set `n` = to `M`, so if you set `M` at 3, set `n` at 3.
    
-   • Set `m` at 3
+   • Set `m` at 3, it ios the default parameter, we are us being explicit here for anyone (including ourselves), reading our code later.
     
     • You must set the `output_denovo` directory as the output, and use 4 threads (4 CPUs: so your analysis finishes faster than 1!).
    
