@@ -81,11 +81,12 @@ library("pophelper")# load plotting module for structure http://www.royfrancis.c
 data<-readQ("populations.structure.out_f",filetype = "structure",indlabfromfile=TRUE)
 plotQ(data,showindlab = TRUE,useindlab=TRUE)  # http://www.royfrancis.com/pophelper/reference/readQ.html
 ```
-•  That should create a structure file in your structure folder. Use the path navigator on the left to reach your folder to be able to visualise the picture by double-clicking on it.
+•  That should create a structure image in your structure folder. Use the path navigator on the left to reach your folder to be able to visualise the picture by double-clicking on it.
 
 • Are the three Oregon threespine stickleback populations related to one another? How can you tell? Use the population labels on the map below to think about it (cs: Cushman Slough , pcr: Poney Creek reservoir, stl: South Twin Lake; [original paper](https://onlinelibrary.wiley.com/doi/10.1111/mec.12330))
 
-![](img/map_sticleback.png)
+  <p align="center"><br><img src="img/map_sticleback.png" alt="drawing" width="700"/></p>
+
 
 Congrats, you just finished our tutorial for the assembly of RAD-Seq data.
 Here are a few things you could do to solidify your learning from today.
