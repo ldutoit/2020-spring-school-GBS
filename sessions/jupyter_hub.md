@@ -11,3 +11,5 @@
  <br><img src="img/ga-vl01jupyterhunNeSI.png" alt="drawing" size="700"/>
 
 5. Click on Terminal on the bottom of the launcher. You are now ready to enter commands!
+
+[Back to homepage](../index.md)
